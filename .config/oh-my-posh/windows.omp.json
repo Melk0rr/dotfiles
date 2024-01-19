@@ -43,13 +43,13 @@
             "home_icon": "\uf015 ",
             "max_depth": 2,
             "mapped_locations": {
-              "D:\\Projets\\01_IT": "\ue266 ",
-              "D:\\Projets\\01_IT\\01_Dev": "\uf668 ",
-              "D:\\Projets\\01_IT\\01_Dev\\01_C-Cpp": "\ue61d ",
-              "D:\\Projets\\01_IT\\01_Dev\\02_Web": "\ue60e ",
-              "D:\\Projets\\01_IT\\01_Dev\\03_Powershell": "\ue795 ",
-              "D:\\Projets\\01_IT\\01_Dev\\04_Python": "\ue235 ",
-              "D:\\Sapere": "\ueaa4"
+              "~\\Projets\\01_IT": "\ue266 ",
+              "~\\Projets\\01_IT\\01_Dev": "\uf668 ",
+              "~\\Projets\\01_IT\\01_Dev\\01_C-Cpp": "\ue61d ",
+              "~\\Projets\\01_IT\\01_Dev\\02_Web": "\ue60e ",
+              "~\\Projets\\01_IT\\01_Dev\\03_Powershell": "\ue795 ",
+              "~\\Projets\\01_IT\\01_Dev\\04_Python": "\ue235 ",
+              "~\\Sapere": "\ueaa4"
             },
             "style": "agnoster_short"
           }
