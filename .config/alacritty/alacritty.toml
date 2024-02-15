@@ -8,9 +8,10 @@ WINIT_X11_SCALE_FACTOR = "1"
 [window]
 dynamic_padding = true
 decorations = "full"
-title = "Alacritty@CachyOS"
+title = "Alacritty@Arch"
 opacity = 0.8
 decorations_theme_variant = "Dark"
+padding = { x = 15, y = 10 }
 
 [window.dimensions]
 columns = 100
