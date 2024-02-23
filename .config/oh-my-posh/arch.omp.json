@@ -68,8 +68,8 @@
           },
           {
             "type": "exit",
-            "style": "powerline",
-            "powerline_symbol": "\ue0b0",
+            "style": "diamond",
+            "trailing_diamond": "\ue0b4",
             "foreground": "#fff",
             "background": "#910000",
             "template": "<transparent> \uf12a</> {{ .Meaning }} "
