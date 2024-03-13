@@ -1,0 +1,240 @@
+/* Base color for the theme, dependent on whether it's a light theme or not */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lwt-accent-color: #1c1b22;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --lwt-accent-color: #FAFAFC;
+  }
+}
+
+:root {
+  --navbarWidth: 650px;
+  --lwt-accent-color: #2E195A !important;
+  --toolbar-field-focus-background-color: #2E195A !important;
+  --button-active-bgcolor: #2E195A !important;
+  --button-hover-bgcolor: #2E195A !important;
+  --input-bgcolor: #2E195A !important;
+  --checkbox-checked-hover-bgcolor: #2E195A !important;
+  --checkbox-unchecked-hover-bgcolor: #2E195A !important;
+  --panel-background: #2E195A !important;
+  --in-content-box-background: #2E195A !important;
+  --in-content-page-background: #411F8D !important;
+  --sidebar-background-color: #411F8D !important;
+  --lwt-sidebar-background-color: #411F8D !important;
+  --tab-icon-overlay-stroke: #411F8D !important;
+  --toolbar-bgcolor: #411F8D !important;
+  --lwt-selected-tab-background-color: #411F8D !important;
+  --toolbarbutton-hover-background: #411F8D !important;
+  --urlbar-box-hover-bgcolor: #411F8D !important;
+  --tabpanel-background-color: #411F8D !important;
+  --tab-selected-bgcolor: #411F8D !important;
+  --arrowpanel-background: #411F8D !important;
+  --newtab-background-color: #411F8D !important;
+  --button-bgcolor: #411F8D !important;
+  --urlbarView-highlight-background: #411F8D !important;
+  --button-primary-hover-bgcolor: #411F8D !important;
+  --button-primary-color: white !important;
+  --button-primary-bgcolor: #ff7f12 !important;
+  --button-primary-active-bgcolor: #ff7f12 !important;
+  --arrowpanel-border-color: #ff7f12 !important;
+  --panel-border-color: #ff7f12 !important;
+  --sidebar-border-color: #ff7f12 !important;
+  --focus-outline-color: #E79819 !important;
+  --toolbar-field-focus-border-color: #E79819 !important;
+  --urlbarView-separator-color: #de0e648c !important;
+  --panel-separator-color: #de0e648c !important;
+}
+
+/*====== Aesthetics ======*/
+
+* {
+  color-scheme: dark !important;
+}
+
+#navigator-toolbox {
+  border-bottom: none !important;
+}
+
+#titlebar {
+  background: var(--lwt-accent-color) !important;
+}
+
+/* Sets the toolbar color */
+toolbar#nav-bar {
+  background: var(--lwt-accent-color) !important;
+  box-shadow: none !important;
+}
+
+/* Sets the URL bar color */
+#urlbar {
+  background: var(--lwt-accent-color) !important;
+  padding: 0 15px !important;
+}
+
+#urlbar-background {
+  background: var(--lwt-accent-color) !important;
+  border: none !important;
+  border-radius: 50px !important;
+}
+
+#urlbar-input-container {
+  border: none !important;
+}
+
+toolbarbutton:hover {
+  background-color: var(--button-hover-bgcolor) !important;
+}
+
+.findbar-textbox {
+  border-radius: 50px !important;
+  border: 1px solid transparent !important;
+}
+
+tree {
+  background-color: var(--arrowpanel-background) !important;
+}
+
+menu,
+menuitem {
+  &:where([_moz-menuactive]:not([disabled="true"])) {
+    background-color: var(--button-bgcolor) !important;
+  }
+
+  &:where([_moz-menuactive="true"][disabled="true"]) {
+    background-color: var(--button-bgcolor) !important;
+  }
+}
+
+.menupopup-arrowscrollbox {
+  background-color: var(--toolbar-field-focus-background-color) !important;
+}
+
+menupopup {
+  --panel-border-color: #ff7f12 !important;
+}
+
+/*====== UI Settings ======*/
+
+.container.infobar {
+  background: var(--input-bgcolor) !important;
+}
+
+/* If the window is wider than 1000px, use flex layout */
+@media (min-width: 1000px) {
+  #navigator-toolbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  /*  Url bar  */
+  #nav-bar {
+    order: 1;
+    width: var(--navbarWidth);
+  }
+
+  /* Tab bar */
+  #titlebar {
+    order: 2;
+    width: calc(100vw - var(--navbarWidth) - 1px);
+  }
+
+  /* Bookmarks bar */
+  #PersonalToolbar {
+    order: 3;
+    width: 100%;
+  }
+
+  /* Fix urlbar sometimes being misaligned */
+  :root[uidensity="compact"] #urlbar {
+    --urlbar-toolbar-height: 39.60px !important;
+  }
+
+  :root[uidensity="touch"] #urlbar {
+    --urlbar-toolbar-height: 49.00px !important;
+  }
+}
+
+/*====== Simplifying interface ======*/
+
+/* Autohide back button when disabled */
+#back-button,
+#forward-button {
+  transform: scale(1, 1) !important;
+  transition: margin-left 150ms var(--animation-easing-function), opacity 250ms var(--animation-easing-function), transform 350ms var(--animation-easing-function) !important;
+  display: none !important;
+}
+
+#back-button[disabled="true"],
+#forward-button[disabled="true"] {
+  margin-left: -34px !important;
+  opacity: 0 !important;
+  transform: scale(0.8, 0.8) !important;
+  pointer-events: none !important;
+}
+
+/* Remove UI elements */
+#identity-box,
+/* Site information */
+#tracking-protection-icon-container,
+/* Shield icon */
+#page-action-buttons> :not(#urlbar-zoom-button, #star-button-box),
+/* All url bar icons except for zoom level and bookmarks */
+#urlbar-go-button,
+/* Search URL magnifying glass */
+#alltabs-button,
+/* Firefox view button */
+#firefox-view-button,
+/* Menu to display all tabs at the end of tabs bar */
+.titlebar-buttonbox-container
+
+/* Minimize, maximize, and close buttons */
+  {
+  display: none !important;
+}
+
+#nav-bar {
+  box-shadow: none !important;
+}
+
+/* Remove "padding" left and right from tabs */
+.titlebar-spacer {
+  display: none !important;
+}
+
+/* Fix URL bar overlapping elements */
+#urlbar-container {
+  min-width: initial !important;
+}
+
+/* Remove border start before tabs */
+#tabbrowser-tabs {
+  border: none !important;
+}
+
+/* Remove gap after pinned tabs */
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[first-visible-unpinned-tab] {
+  margin-inline-start: 0 !important;
+}
+
+/* Hide the hamburger menu */
+#PanelUI-menu-button {
+  padding: 0px !important;
+}
+
+#PanelUI-menu-button .toolbarbutton-icon {
+  width: 1px !important;
+}
+
+#PanelUI-menu-button .toolbarbutton-badge-stack {
+  padding: 0px !important;
+}
+
+/* Removes special spring */
+#customizableui-special-spring2 {
+  display: none;
+}
