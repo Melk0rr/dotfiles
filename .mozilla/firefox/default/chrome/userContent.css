@@ -2,17 +2,7 @@
 url(about:newtab),
 url(about:preferences),
 url(about:home),
-url(about:privatebrowsing){
-:root {
-  --newtab-background-color-secondary: #2E195A !important;
-  --in-content-page-background: #2E195A !important;
-  --newtab-primary-action-background: #E79819 !important;
-  --newtab-element-hover-color: #2E195A !important;
-}
-
-body {
-  background-color: #2E195A !important;
-}
+url(about:privatebrowsing) {
 
 .logo,
 .wordmark {
@@ -29,7 +19,6 @@ body {
 
 search-textbox {
   border-radius: 50px !important;
-  background-color: #411F8D !important;
 }
 }
 
@@ -37,10 +26,11 @@ search-textbox {
 url(about:newtab),
 url(about:home){
 body {
-  background-image: url("firefox_wp.png");
+  background-image: url("/home/me1k0r/.config/swww/wall.set");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
 }
 }
 
