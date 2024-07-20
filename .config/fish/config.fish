@@ -138,6 +138,7 @@ abbr gdi 'git diff'
 abbr gmr 'git merge'
 abbr gco 'git checkout'
 abbr gb 'git branch'
+abbr gre 'git rebase'
 
 alias py='python3'
 
