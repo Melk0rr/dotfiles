@@ -1,0 +1,41 @@
+@-moz-document url(about:blank),
+url(about:newtab),
+url(about:preferences),
+url(about:home),
+url(about:privatebrowsing) {
+
+.logo,
+.wordmark {
+  display: none !important;
+}
+
+.search-handoff-button {
+  border-radius: 50px !important;
+}
+
+.ds-top-sites {
+  margin-bottom: 85% !important;
+}
+
+search-textbox {
+  border-radius: 50px !important;
+}
+}
+
+@-moz-document url(about:blank),
+url(about:newtab),
+url(about:home){
+body {
+  background-image: url("/home/me1k0r/.cache/hyde/wall.set") !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+}
+}
+
+@-moz-document url(about:blank){
+body {
+  height: 100%;
+}
+}
