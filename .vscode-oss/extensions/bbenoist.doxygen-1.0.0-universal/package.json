@@ -1,0 +1,55 @@
+{
+	"name": "Doxygen",
+	"description": "Doxygen language support for Visual Studio Code",
+	"version": "1.0.0",
+	"publisher": "bbenoist",
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#244FA7",
+		"theme": "dark"
+	},
+	"license": "SEE LICENSE IN LICENSE.md",
+	"bugs": {
+		"url": "https://github.com/bbenoist/vscode-doxygen/issues"
+	},
+	"homepage": "https://github.com/bbenoist/vscode-doxygen/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bbenoist/vscode-doxygen.git"
+	},
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "doxygen",
+				"extensions": [
+					".dox"
+				],
+				"configuration": "./doxygen.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "doxygen",
+				"scopeName": "source.doxygen",
+				"path": "./syntaxes/doxygen.tmLanguage"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "aab644b7-f446-4774-87fc-2cce8f0d5a4f",
+		"publisherId": "787ce942-60d4-48d6-b14e-25bdc72bd145",
+		"publisherDisplayName": "bbenoist",
+		"targetPlatform": "universal",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1711565010407,
+		"pinned": false
+	}
+}
