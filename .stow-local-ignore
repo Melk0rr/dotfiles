@@ -8,3 +8,5 @@
 .config/kitty/theme.conf
 .config/oh-my-posh
 .config/sddm
+.config/waybar/style.css
+.config/waybar/theme.css
