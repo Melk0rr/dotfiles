@@ -1,6 +1,7 @@
 .git
 .vscode-oss
 .mozilla
+.themes
 .config/hyde/wallbash
 .config/hypr/themes/colors.conf
 .config/hypr/themes/theme.conf
