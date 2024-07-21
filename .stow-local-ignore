@@ -2,3 +2,4 @@
 .vscode-oss
 .mozilla
 .config/hyde/wallbash
+.config/kitty/theme.conf
