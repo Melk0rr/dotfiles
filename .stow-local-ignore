@@ -6,3 +6,4 @@
 .config/hypr/themes/colors.conf
 .config/hypr/themes/theme.conf
 .config/kitty/theme.conf
+.config/sddm
