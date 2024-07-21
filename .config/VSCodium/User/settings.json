@@ -1,0 +1,27 @@
+{
+  "workbench.colorTheme": "wallbash",
+  "workbench.iconTheme": "material-icon-theme",
+  "window.titleBarStyle": "custom",
+  "editor.fontFamily": "MesloLGL Nerd Font",
+  "terminal.external.linuxExec": "kitty",
+  "terminal.explorerKind": "both",
+  "terminal.sourceControlRepositoriesKind": "both",
+  "telemetry.telemetryLevel": "off",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "dotnetAcquisitionExtension.enableTelemetry": false,
+  "terminal.integrated.fontSize": 12
+}
