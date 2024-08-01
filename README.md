@@ -40,5 +40,5 @@ One branch per distro
 - [hyde project](https://github.com/prasanthrangan/hyprdots): for the awesome scripts and dotfiles, especially wallbash related and for showing me how to do stuff.
   My dotfiles contain a lot of their work:
   - .themes
-  - scipts (some of which I have tweaked)
+  - scripts (some of which I have tweaked)
   - various dotfiles
