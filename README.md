@@ -37,4 +37,8 @@ One branch per distro
    stow .   
    ```
 ## Thanks
-- [hyde project](https://github.com/prasanthrangan/hyprdots): for the awesome scripts and dotfiles, especially wallbash related and for showing me how to do stuff
+- [hyde project](https://github.com/prasanthrangan/hyprdots): for the awesome scripts and dotfiles, especially wallbash related and for showing me how to do stuff.
+  My dotfiles contain a lot of their work:
+  - .themes
+  - scipts (some of which I have tweaked)
+  - various dotfiles
