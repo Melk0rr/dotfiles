@@ -28,9 +28,9 @@ One branch per distro
    ```
 2. Checkout the branch you want depending on the distro you're on
    ```shell
-   git checkout arch # Arch
-   git checkout debian # Debian
-   git checkout opensuse # openSuse
+   git checkout arch
+   git checkout debian
+   git checkout opensuse
    ```
 3. Deploy the files using Stow
    ```shell
