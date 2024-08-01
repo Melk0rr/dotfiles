@@ -26,7 +26,7 @@ search-textbox {
 url(about:newtab),
 url(about:home){
 body {
-  background-image: url("/home/me1k0r/.cache/hyde/wall.set") !important;
+  background-image: url(file://$HOME/.cache/hyde/wall.set) !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
