@@ -55,6 +55,7 @@ button {
 
 .dark-theme, html[data-theme=dark] {
 
+  --ct-bold-color: #<wallbash_3xa6> !important;
   --ct-right-sidebar-bg-color: #<wallbash_pry1> !important;
 
   --ls-border-color: #<wallbash_4xa1> !important;
