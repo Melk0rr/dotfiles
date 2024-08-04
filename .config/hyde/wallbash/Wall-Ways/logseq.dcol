@@ -1,135 +1,106 @@
 $HOME/.logseq/custom.css
 :root {
-  --cp-darkest: #<wallbash_1xa1>;
-  --cp-darker: #<wallbash_pry1>;
-  --cp-dark: #<wallbash_pry1>;
-  --cp-gray: #<wallbash_1xa1>;
-  --cp-lighter: #32363e;
-  --cp-lightest: #5c6370;
-  --cp-beige: #CCCCCC;
-  --cp-darkblue: #528BFF;
-  --cp-darkred: #BE5046;
-  --cp-orange: #D19A66;
-  --cp-lightgray: #ABB2BF;
-  --cp-cyan: #56B6C2;
-  --cp-blue: #61AFEF;
-  --cp-magenta: #C678DD;
-  --cp-green: #98C379;
-  --cp-red: #E06C75;
-  --cp-yellow: #E5C07B;
-  --cp-white: #F1F2F4;
-  --cp-primary: #<wallbash_pry4>;
-  --awCo-red: #d3455b;
-  --awCo-orange: #f09000;
-  --awCo-yellow-dark: #e6af19;
-  --awCo-yellow: #f9d86c;
-  --awCo-green: #27ae9e;
-  --awCo-blue: #2c89d9;
-  --awCo-purple: #9c739c;
-  --awCo-cherry: #c8896a;
-  --awCo-marker-waiting: var(--awCo-marker-waiting-user, var(--awCo-cherry));
-  --awCo-marker-later: var(--awCo-marker-later-user, var(--awCo-orange));
-  --awCo-marker-todo: var(--awCo-marker-todo-user, var(--awCo-red));
-  --awCo-marker-now-doing: var(--awCo-marker-now-doing-user, var(--awCo-blue));
-  --awCo-marker-done: var(--awCo-marker-done-user, var(--awCo-green));
-  --awCo-priority-a: var(--awCo-priority-a-user, var(--awCo-red));
-  --awCo-priority-b: var(--awCo-priority-b-user, var(--awCo-orange));
-  --awCo-priority-c: var(--awCo-priority-c-user, var(--awCo-green));
+  --cp-primary: #<wallbash_pry4> !important;
+  --cp-dark: #<wallbash_pry1> !important;
+  --cp-darker: #<wallbash_pry1> !important;
+  --cp-darkest: #<wallbash_1xa1> !important;
+  --cp-lighter: #<wallbash_3xa2> !important;
+  --cp-lightest: #<wallbash_3xa3> !important;
+  --cp-gray: #<wallbash_1xa1> !important;
+  --cp-lightgray: #<wallbash_1xa1> !important;
+  --cp-red: #<wallbash_4xa9> !important;
+  --cp-darkred: #<wallbash_4xa8> !important;
+  --cp-beige: #<wallbash_4xa6> !important;
+  --cp-orange: #<wallbash_pry4> !important;
+  --cp-cyan: #<wallbash_3xa7> !important;
+  --cp-blue: #<wallbash_1xa8> !important;
+  --cp-darkblue: #<wallbash_1xa7> !important;
+  --cp-magenta: #<wallbash_2xa7> !important;
+  --cp-green: #<wallbash_2xa8> !important;
+  --cp-yellow: #<wallbash_3xa8> !important;
+  --cp-white: #<wallbash_4xa8> !important;
+
+  --lx-accent-01: #<wallbash_1xa1> !important;
+  --lx-accent-02: #<wallbash_1xa2> !important;
+  --lx-accent-03: #<wallbash_1xa3> !important;
+  --lx-accent-04: #<wallbash_1xa4> !important;
+  --lx-accent-05: #<wallbash_1xa5> !important;
+  --lx-accent-06: #<wallbash_1xa6> !important;
+  --lx-accent-07: #<wallbash_1xa7> !important;
+  --lx-accent-08: #<wallbash_1xa8> !important;
+  --lx-accent-09: #<wallbash_1xa9> !important;
+  --lx-accent-10: #<wallbash_pry2> !important;
+  --lx-accent-11: #<wallbash_pry3> !important;
+  --lx-accent-12: #<wallbash_pry4> !important;
+  
+
+  --ls-border-color: #<wallbash_4xa1> !important;
+  --ls-secondary-border-color: #<wallbash_3xa1> !important;
+
+  --ct-h1-color: 1px solid #<wallbash_4xa1> !important;
+  --ct-h2-color: 1px solid #<wallbash_4xa1> !important;
+  --ct-h3-color: 1px solid #<wallbash_4xa1> !important;
+  --ct-h4-color: 1px solid #<wallbash_4xa1> !important;
+  --ct-h5-color: 1px solid #<wallbash_4xa1> !important;
+  --ct-bold-color: var(--cp-red) !important;
+}
+
+html * {
+  border-color: var(--ls-border-color);
+}
+
+button {
+  box-shadow: none !important;
 }
 
 .dark-theme, html[data-theme=dark] {
-  --ls-primary-background-color: var(--cp-darker);
-  --ls-secondary-background-color: var(--cp-darkest);
-  --ls-tertiary-background-color: var(--cp-darker);
-  --ls-quaternary-background-color: var(--cp-lighter);
-  --ls-top-bar-background: var(--cp-darker);
-  --ls-main-content-background: var(--cp-darker);
-  --ls-left-sidebar-background: var(--cp-darkest);
-  --ls-scrollbar-foreground-color: #8a8a8a3d;
-  --ls-scrollbar-background-color: #fff0;
-  --ct-scrollbar-thumb-hover-color: #8a8a8a61;
-  --ls-menu-hover-color: var(--cp-darker);
-  --ls-a-chosen-bg: var(--cp-darker);
-  --ls-title-text-color: var(--cp-white);
-  --ls-primary-text-color: var(--cp-white);
-  --ls-secondary-text-color: #F6F7F8;
-  --ls-tag-text-color: var(--cp-primary);
-  --ls-tag-text-hover-color: #BECBF3;
-  --ls-link-text-color: var(--cp-primary);
-  --lx-accent-11: var(--ls-link-text-color);
-  --ls-link-text-hover-color: var(--ls-link-text-color);
-  --lx-accent-12: var(--ls-link-text-color);
-  --ls-link-ref-text-hover-color: var(--lx-accent-11);
-  --lx-accent-03-alpha: #869ee923;
-  --ls-anchor-link-text-color-hover: var(--lx-accent-11);
-  --ls-block-ref-link-text-color: var(--ls-secondary-text-color);
-  --ls-page-ref-text-color: var(--ls-link-ref-text-color);
-  --ls-page-ref-text-color-hover: #97a9df;
-  --ls-page-reference-hover-background: rgba(134, 158, 233, 0.137254902);
-  --ls-page-reference-block-hover-background: var(--ls-tertiary-background-color);
-  --ls-dropdown-title-color: var(--cp-primary);
-  --ls-dropdown-title-background: #202124;
-  --lx-gray-03: var(--cp-gray);
-  --lx-gray-04: var(--cp-darker);
-  --lx-gray-05: var(--cp-darker);
-  --lx-gray-07: #<wallbash_4xa1>;
-  --lx-gray-11: #999;
-  --lx-gray-12: var(--cp-white);
-  --ls-border-color: #<wallbash_4xa1>;
-  --ls-secondary-border-color: #<wallbash_4xa1>;
-  --ls-tertiary-border-color: #464646;
-  --color-level-3: #33363c;
-  --color-level-4: #484848;
-  --color-level-5: #2A2F37;
-  --ls-icon-color: #767676;
-  --ls-search-icon-color: var(--ls-quaternary-background-color);
-  --ls-header-button-text-color: #999;
-  --ls-header-button-text-color-hover: var(--cp-white);
-  --ls-header-button-background: var(--ls-secondary-background-color);
-  --ls-header-button-hover: #1D2026;
-  --ls-left-sidebar-text-color: var(--ls-primary-text-color);
-  --ls-left-sidebar-active-background: #393e47;
-  --ls-left-sidebar-hover-background: var(--ls-quaternary-background-color);
-  --ls-right-sidebar-content-background: var(--ls-primary-background-color);
-  --ls-right-ridebar-color: var(--cp-darker);
-  --ls-table-tr-even-background-color: var(--ls-secondary-background-color);
-  --ls-page-properties-background-color: var(--cp-darkest);
-  --ls-block-properties-background-color: var(--cp-darkest);
-  --ls-page-inline-code-color: var(--cp-white);
-  --ls-page-inline-code-bg-color: var(--cp-darker);
-  --ls-page-blockquote-color: var(--cp-white);
-  --ls-page-blockquote-bg-color: #1a1c21;
-  --ls-page-blockquote-border-color: #495162;
-  --ls-page-mark-color: var(--cp-gray);
-  --ls-page-mark-bg-color: #bfae3a;
-  --ls-selection-background-color: #495162;
-  --ls-block-highlight-color: #495162;
-  --ls-block-bullet-color: #495162;
-  --ls-block-bullet-border-color: #495162;
-  --ls-guideline-color: var(--cp-lighter);
-  --ls-guideline-hover-color: var(--ls-tag-text-hover-color);
-  --ct-bold-color: #ffb86c;
-  --ct-italic-color: #f1fa8c;
-  --box-shadow-sm: rgba(0, 0, 0, 0.1) 0 2px 3px 0;
-  --block-ref-bg: rgb(86 90 122 / 40%);
-  --block-ref-bg-hv: rgb(86 90 122 / 50%);
-  --popover: 216deg 13.16% 14.9%;
-  --lx-popover-bg: var(--lx-gray-03);
-  --border: 220deg 8.26% 21.37%;
-  --accent: 225.45deg 69.23% 71.96%;
-  --ct-color-level-1: var(--cp-darkest);
-  --primary: 225.45deg 69.23% 72%;
-  --secondary: 225.33deg 26.63% 41%;
-  --lx-accent-10: 225.45deg 69.23% 75%;
-  --ct-cm-bg: var(--cp-dark);
-  --ct-right-sidebar-bg-color: var(--cp-darker);
+
+  --ct-right-sidebar-bg-color: #<wallbash_pry1> !important;
+
+  --ls-border-color: #<wallbash_4xa1> !important;
+  --ls-secondary-border-color: #<wallbash_3xa1> !important;
+
+  --ls-primary-background-color: #<wallbash_pry1> !important;
+  --ls-secondary-background-color: #<wallbash_pry2> !important;
+  --ls-tertiary-background-color: #<wallbash_pry3> !important;
+  --ls-quaternary-background-color: #<wallbash_pry4> !important;
+
+  --rx-logseq-01: #<wallbash_1xa1> !important;
+  --rx-logseq-02: #<wallbash_1xa2> !important;
+  --rx-logseq-03: #<wallbash_1xa3> !important;
+  --rx-logseq-04: #<wallbash_1xa4> !important;
+  --rx-logseq-05: #<wallbash_1xa5> !important;
+  --rx-logseq-06: #<wallbash_1xa6> !important;
+  --rx-logseq-07: #<wallbash_1xa7> !important;
+  --rx-logseq-08: #<wallbash_1xa8> !important;
+  --rx-logseq-09: #<wallbash_1xa9> !important;
+  --rx-logseq-10: #<wallbash_pry2> !important;
+  --rx-logseq-11: #<wallbash_pry3> !important;
+  --rx-logseq-12: #<wallbash_pry4> !important;
 }
 
-html[data-theme=dark][data-color=logseq] {
-  --ls-primary-background-color: var(--cp-darker);
-  --ls-secondary-background-color: var(--cp-darkest);
-  --ls-tertiary-background-color: var(--cp-darker);
-  --ls-quaternary-background-color: var(--cp-lighter);
+.form-input {
+  background-color: var(--ls-tertiary-background-color);
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 2px var(--ls-border-color);
+}
+
+.absolute-modal[data-modal-name] {
+  background-color: var(--ls-secondary-background-color);
+}
+
+html[data-theme=dark] .absolute-modal {
+  border: 1px solid var(--ls-border-color);
+}
+
+html[data-theme=dark] .absolute-modal button {
+  background-color: var(--ls-primary-background-color) !important;
+}
+
+html[data-theme=dark] .absolute-modal button:hover {
+  background-color: #<wallbash_4xa1> !important;
 }
 
 .dropdown-wrapper, .menu-links-outer, .menu-links-wrapper {
