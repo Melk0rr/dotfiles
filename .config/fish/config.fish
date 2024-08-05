@@ -1,3 +1,4 @@
+# source /usr/share/fish/config.fish
 oh-my-posh init fish --config ~/.config/oh-my-posh/omp.json | source
 
 ############# Functions ############# 
@@ -130,3 +131,4 @@ alias py='python3'
 
 # Zoxide
 zoxide init fish | source
+
