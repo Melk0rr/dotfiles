@@ -108,6 +108,9 @@ abbr psmem 'ps auxf | sort -nr -k 4'
 abbr pscpu 'ps auxf | sort -nr -k 3'
 abbr jctl 'journalctl -p 3 -xb'
 
+abbr patch-file 'diff -Naru'
+abbr patch-dir 'diff -crB'
+
 # LS
 alias ls='eza -la --color=always --group-directories-first --icons'
 alias la='eza -a --color=always --group-directories-first --icons'
