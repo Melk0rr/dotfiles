@@ -147,4 +147,4 @@ alias py='python3'
 
 
 # Zoxide
-zoxide init fish | source
+zoxide init --cmd cd fish | source
