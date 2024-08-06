@@ -194,8 +194,8 @@
 		"on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -o d",
 		"scroll-step": 5,
 		"format-icons": {
-            "default": ["", "", "󰕾", ""]
-        }
+			"default": ["", "", "󰕾", ""]
+		}
 	},
 
 	"wireplumber#microphone": {
