@@ -101,6 +101,10 @@ abbr psmem 'ps auxf | sort -nr -k 4'
 abbr pscpu 'ps auxf | sort -nr -k 3'
 abbr jctl 'journalctl -p 3 -xb'
 
+# Patching
+abbr patch-file 'diff -Naru'
+abbr patch-dir 'diff -crB'
+
 # LS
 alias ls='eza -la --color=always --group-directories-first --icons'
 alias la='eza -a --color=always --group-directories-first --icons'
@@ -129,4 +133,4 @@ alias py='python3'
 
 
 # Zoxide
-zoxide init fish | source
+zoxide init --cmd cd fish | source
