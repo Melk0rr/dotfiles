@@ -108,6 +108,7 @@ abbr psmem 'ps auxf | sort -nr -k 4'
 abbr pscpu 'ps auxf | sort -nr -k 3'
 abbr jctl 'journalctl -p 3 -xb'
 
+# Patching
 abbr patch-file 'diff -Naru'
 abbr patch-dir 'diff -crB'
 
