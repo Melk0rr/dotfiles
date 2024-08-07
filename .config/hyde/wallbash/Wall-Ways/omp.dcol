@@ -12,6 +12,7 @@ $HOME/.config/oh-my-posh/omp.json
           {
             "type": "os",
             "style": "diamond",
+            "foreground": "#<wallbash_txt2>",
             "background": "#<wallbash_pry2>",
             "leading_diamond": "\ue0c7",
             "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
@@ -27,6 +28,7 @@ $HOME/.config/oh-my-posh/omp.json
               "{{if .Root}}#ff385d{{end}}"
             ],
             "trailing_diamond": "\ue0bc",
+            "foreground": "#<wallbash_txt2>",
             "background": "#<wallbash_pry2>",
             "template": " {{if .Root}}{{ .UserName }}💀{{ .HostName }} {{else}}{{ .UserName }}@{{ .HostName }} {{end}} "
           },
@@ -34,6 +36,7 @@ $HOME/.config/oh-my-posh/omp.json
             "type": "path",
             "style": "diamond",
             "trailing_diamond": "\ue0b4",
+            "foreground": "#<wallbash_txt4>",
             "background": "#<wallbash_pry4>",
             "template": " {{ .Path }} ",
             "properties": {
@@ -51,12 +54,11 @@ $HOME/.config/oh-my-posh/omp.json
             "style": "diamond",
             "trailing_diamond": "\ue0b4",
             "background": "#<wallbash_pry3>",
-            "foreground": "#<wallbash_2xa9>",
             "foreground_templates": [
-              "{{ if or (.Working.Changed) (.Staging.Changed) }}#<wallbash_3xa9>{{ end }}",
+              "{{ if or (.Working.Changed) (.Staging.Changed) }}#<wallbash_4xa7>{{ end }}",
               "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#<wallbash_4xa9>{{ end }}",
-              "{{ if gt .Ahead 0 }}#89d1dc{{ end }}",
-              "{{ if gt .Behind 0 }}#<wallbash_4xa8>{{ end }}"
+              "{{ if gt .Ahead 0 }}#<wallbash_3xa7>{{{ end }}",
+              "{{ if gt .Behind 0 }}#<wallbash_2xa3>{{ end }}"
             ],
             "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }} ",
             "properties": {
@@ -80,7 +82,8 @@ $HOME/.config/oh-my-posh/omp.json
           {
             "type": "executiontime",
             "style": "diamond",
-            "background": "#<wallbash_pry2>",
+            "foreground": "#<wallbash_txt1>",
+            "background": "#<wallbash_pry1>",
             "invert_powerline": true,
             "leading_diamond": "\ue0b6",
             "trailing_diamond": "\ue0bc",
@@ -94,8 +97,8 @@ $HOME/.config/oh-my-posh/omp.json
             "style": "diamond",
             "invert_powerline": true,
             "trailing_diamond": "\ue0b4",
-            "foreground": "transparent",
-            "background": "#<wallbash_4xa8>",
+            "foreground": "#<wallbash_txt3>",
+            "background": "#<wallbash_pry3>",
             "template": " 󱑎 {{ .CurrentDate | date .Format }} "
           }
         ]
