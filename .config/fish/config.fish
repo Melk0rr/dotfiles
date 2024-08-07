@@ -29,7 +29,7 @@ function empty-trash
 	echo 'Emptying trash...'
 	
 	# Global trash
-	rm -rfv ~/.local/share/Trash/*
+	sudo rm -rfv ~/.local/share/Trash/*
 	sudo rm -rfv /root/.local/share/Trash/*
 end
 
