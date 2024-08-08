@@ -1,13 +1,13 @@
 $HOME/.logseq/custom.css
 :root {
-  --cp-primary: #<wallbash_pry4> !important;
-  --cp-dark: #<wallbash_pry1> !important;
-  --cp-darker: #<wallbash_pry1> !important;
-  --cp-darkest: #<wallbash_1xa1> !important;
-  --cp-lighter: #<wallbash_3xa2> !important;
-  --cp-lightest: #<wallbash_3xa3> !important;
+  --cp-primary: #<wallbash_4xa4> !important;
+  --cp-dark: #<wallbash_1xa3> !important;
+  --cp-darker: #<wallbash_1xa2> !important;
+  --cp-darkest: #<wallbash_pry1> !important;
+  --cp-lighter: #<wallbash_1xa7> !important;
+  --cp-lightest: #<wallbash_1xa8> !important;
   --cp-gray: #<wallbash_1xa1> !important;
-  --cp-lightgray: #<wallbash_1xa1> !important;
+  --cp-lightgray: #<wallbash_1xa2> !important;
   --cp-red: #<wallbash_4xa9> !important;
   --cp-darkred: #<wallbash_4xa8> !important;
   --cp-beige: #<wallbash_4xa6> !important;
@@ -20,28 +20,28 @@ $HOME/.logseq/custom.css
   --cp-yellow: #<wallbash_3xa8> !important;
   --cp-white: #<wallbash_4xa8> !important;
 
-  --lx-accent-01: #<wallbash_1xa1> !important;
-  --lx-accent-02: #<wallbash_1xa2> !important;
-  --lx-accent-03: #<wallbash_1xa3> !important;
-  --lx-accent-04: #<wallbash_1xa4> !important;
-  --lx-accent-05: #<wallbash_1xa5> !important;
-  --lx-accent-06: #<wallbash_1xa6> !important;
-  --lx-accent-07: #<wallbash_1xa7> !important;
-  --lx-accent-08: #<wallbash_1xa8> !important;
-  --lx-accent-09: #<wallbash_1xa9> !important;
-  --lx-accent-10: #<wallbash_pry2> !important;
-  --lx-accent-11: #<wallbash_pry3> !important;
-  --lx-accent-12: #<wallbash_pry4> !important;
+  --lx-accent-01: #<wallbash_1xa3> !important;
+  --lx-accent-02: #<wallbash_1xa4> !important;
+  --lx-accent-03: #<wallbash_1xa5> !important;
+  --lx-accent-04: #<wallbash_2xa3> !important;
+  --lx-accent-05: #<wallbash_2xa4> !important;
+  --lx-accent-06: #<wallbash_2xa5> !important;
+  --lx-accent-07: #<wallbash_3xa4> !important;
+  --lx-accent-08: #<wallbash_3xa4> !important;
+  --lx-accent-09: #<wallbash_3xa5> !important;
+  --lx-accent-10: #<wallbash_4xa3> !important;
+  --lx-accent-11: #<wallbash_4xa4> !important;
+  --lx-accent-12: #<wallbash_4xa5> !important;
   
 
   --ls-border-color: #<wallbash_4xa1> !important;
   --ls-secondary-border-color: #<wallbash_3xa1> !important;
 
-  --ct-h1-color: 1px solid #<wallbash_4xa1> !important;
-  --ct-h2-color: 1px solid #<wallbash_4xa1> !important;
-  --ct-h3-color: 1px solid #<wallbash_4xa1> !important;
-  --ct-h4-color: 1px solid #<wallbash_4xa1> !important;
-  --ct-h5-color: 1px solid #<wallbash_4xa1> !important;
+  --ct-h1-color: 1px solid #<wallbash_4xa4> !important;
+  --ct-h2-color: 1px solid #<wallbash_4xa4> !important;
+  --ct-h3-color: 1px solid #<wallbash_4xa4> !important;
+  --ct-h4-color: 1px solid #<wallbash_4xa4> !important;
+  --ct-h5-color: 1px solid #<wallbash_4xa4> !important;
   --ct-bold-color: var(--cp-red) !important;
 }
 
@@ -49,7 +49,7 @@ html * {
   border-color: var(--ls-border-color);
 }
 
-button {
+button, a {
   box-shadow: none !important;
 }
 
@@ -66,18 +66,18 @@ button {
   --ls-tertiary-background-color: #<wallbash_pry3> !important;
   --ls-quaternary-background-color: #<wallbash_pry4> !important;
 
-  --rx-logseq-01: #<wallbash_1xa1> !important;
-  --rx-logseq-02: #<wallbash_1xa2> !important;
-  --rx-logseq-03: #<wallbash_1xa3> !important;
-  --rx-logseq-04: #<wallbash_1xa4> !important;
-  --rx-logseq-05: #<wallbash_1xa5> !important;
-  --rx-logseq-06: #<wallbash_1xa6> !important;
-  --rx-logseq-07: #<wallbash_1xa7> !important;
-  --rx-logseq-08: #<wallbash_1xa8> !important;
-  --rx-logseq-09: #<wallbash_1xa9> !important;
-  --rx-logseq-10: #<wallbash_pry2> !important;
-  --rx-logseq-11: #<wallbash_pry3> !important;
-  --rx-logseq-12: #<wallbash_pry4> !important;
+  --rx-logseq-01: #<wallbash_1xa3> !important;
+  --rx-logseq-02: #<wallbash_1xa4> !important;
+  --rx-logseq-03: #<wallbash_1xa5> !important;
+  --rx-logseq-04: #<wallbash_2xa3> !important;
+  --rx-logseq-05: #<wallbash_2xa4> !important;
+  --rx-logseq-06: #<wallbash_2xa5> !important;
+  --rx-logseq-07: #<wallbash_3xa4> !important;
+  --rx-logseq-08: #<wallbash_3xa4> !important;
+  --rx-logseq-09: #<wallbash_3xa5> !important;
+  --rx-logseq-10: #<wallbash_4xa3> !important;
+  --rx-logseq-11: #<wallbash_4xa4> !important;
+  --rx-logseq-12: #<wallbash_4xa5> !important;
 }
 
 .form-input {
@@ -96,12 +96,14 @@ html[data-theme=dark] .absolute-modal {
   border: 1px solid var(--ls-border-color);
 }
 
-html[data-theme=dark] .absolute-modal button {
-  background-color: var(--ls-primary-background-color) !important;
+html[data-theme=dark] .absolute-modal button,
+.ui__button {
+  background-color: var(--ls-tertiary-background-color) !important;
 }
 
-html[data-theme=dark] .absolute-modal button:hover {
-  background-color: #<wallbash_4xa1> !important;
+html[data-theme=dark] .absolute-modal button:hover,
+.ui__button:hover {
+  background-color: var(--ls-secondary-background-color) !important;
 }
 
 .dropdown-wrapper, .menu-links-outer, .menu-links-wrapper {
