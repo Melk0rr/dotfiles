@@ -7,6 +7,7 @@
 .config/dunst/dunstrc
 .config/dunst/wallbash.conf
 .config/hyde/wallbash
+.config/hypr/hyprlock.conf
 .config/hypr/themes/colors.conf
 .config/hypr/themes/theme.conf
 .config/kitty/theme.conf
