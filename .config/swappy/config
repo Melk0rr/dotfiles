@@ -1,0 +1,3 @@
+[Default]
+save_dir=/home/me1k0r/Pictures/Screenshots/%Y-%m-%d/
+save_filename_format=%Y%m%d-%H%M%S_screenshot.png
