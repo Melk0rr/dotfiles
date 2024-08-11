@@ -1,2 +1,6 @@
+# Wallpapers
 wallpapers/
 wall.set
+
+# Dunst icons
+**/dunst/icons
