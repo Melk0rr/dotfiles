@@ -9,4 +9,4 @@
 ;;   {:shortcuts {:ui/toggle-theme "t z"
 ;;                :ui/toggle-brackets "t b"}}
 
-{ :custom-css-url "@import url(assets://home/me1k0r/.logseq/custom.css);" }
+{ :custom-css-url "@import url(assets:///home/me1k0r/.logseq/custom.css);" }
