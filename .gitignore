@@ -8,6 +8,7 @@ wall.set
 # Dynamically generated files
 **/dunst/wallbash.conf
 **/Kvantum/wallbash
+**/hyde/palette.css
 **/hypr/hyprlock.conf
 **/hypr/themes/colors.conf
 **/hypr/themes/theme.conf
