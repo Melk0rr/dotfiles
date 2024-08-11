@@ -4,3 +4,14 @@ wall.set
 
 # Dunst icons
 **/dunst/icons
+
+# Dynamically generated files
+**/dunst/wallbash.conf
+**/Kvantum/wallbash
+**/hypr/hyprlock.conf
+**/hypr/themes/colors.conf
+**/hypr/themes/theme.conf
+**/kitty/theme.conf
+**/oh-my-posh/omp.json
+**/rofi/theme.rasi
+**/sddm/**/theme.conf
