@@ -28,7 +28,7 @@ $HOME/.config/appflowy/wallbash.flowy_plugin/wallbash.dark.json|cp $HOME/.config
   "tint9": "0x4d<wallbash_4xa7>",
   "main1": "0xff<wallbash_1xa5>",
   "main2": "0xff<wallbash_1xa6>",
-  "shadow": "0xff<wallbash_pry1>",
+  "shadow": "0xff<wallbash_1xa1>",
   "sidebarBg": "0xff<wallbash_pry2>",
   "divider": "0xff<wallbash_txt1>",
   "topbarBg": "0xff<wallbash_pry4>",
@@ -36,8 +36,8 @@ $HOME/.config/appflowy/wallbash.flowy_plugin/wallbash.dark.json|cp $HOME/.config
   "text": "0xff<wallbash_txt1>",
   "secondaryText": "0xff<wallbash_txt2>",
   "strongText": "0xff<wallbash_3xa6>",
-  "input": "0xff<wallbash_pry3>",
-  "hint": "0x80<wallbash_txt3>",
+  "input": "0xff<wallbash_3xa1>",
+  "hint": "0x80<wallbash_txt2>",
   "primary": "0xff<wallbash_3xa5>",
   "onPrimary": "0xff<wallbash_1xa9>",
   "hoverBG1": "0xff<wallbash_2xa4>",
@@ -49,5 +49,5 @@ $HOME/.config/appflowy/wallbash.flowy_plugin/wallbash.dark.json|cp $HOME/.config
   "toolbarColor": "0xff<wallbash_1xa2>",
   "toggleButtonBGColor": "0xff<wallbash_pry3>",
   "calendarWeekendBGColor": "0x4D<wallbash_2xa1>",
-  "gridRowCountColor": "0xff<wallbash_txt1>"
+  "gridRowCountColor": "0xff<wallbash_4xa8>"
 }
