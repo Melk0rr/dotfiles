@@ -4,7 +4,7 @@ $HOME/.config/sddm/themes/corners/theme.conf
 BgSource="/home/me1k0r/.cache/hyde/wall.set"
 FontFamily="Cantarell"
 Padding="50"
-Radius="5"
+Radius="50"
 FontSize="12"
 Scale="0.85"
 
