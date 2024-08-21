@@ -90,7 +90,7 @@ openrgb --profile theme.orp
 
 #// gtk3
 
-sed -i "/^gtk-theme-name=/c\gtk-theme-name=${gtkTheme}" $confDir/gtk-3.0/settings.ini
+sed -i "/^gtk-theme-name=/c\gtk-theme-name=Wallbash-Gtk" $confDir/gtk-3.0/settings.ini
 sed -i "/^gtk-icon-theme-name=/c\gtk-icon-theme-name=${gtkIcon}" $confDir/gtk-3.0/settings.ini
 
 
@@ -101,8 +101,13 @@ if [ -d /run/current-system/sw/share/themes ] ; then
 else
     themeDir=~/.themes
 fi
+
 rm -rf "${confDir}/gtk-4.0"
-ln -s "${themeDir}/${gtkTheme}/gtk-4.0" "${confDir}/gtk-4.0"
+if [ "${enableWallDcol}" -eq 0 ] ; then
+    ln -s "${themeDir}/${gtkTheme}/gtk-4.0" "${confDir}/gtk-4.0"
+else
+    ln -s "${themeDir}/Wallbash-Gtk/gtk-4.0" "${confDir}/gtk-4.0"
+fi
 
 
 #// flatpak GTK
