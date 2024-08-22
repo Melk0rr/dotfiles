@@ -98,8 +98,11 @@ end
 
 ############# Aliases & Abbreviations ############# 
 alias grep='grep --color'
+
+# Install date
 abbr install-date 'stat -c %w / | cut -b 1-16'
 
+# Fastfetch
 abbr ff 'fastfetch'
 
 # Process and journals
@@ -117,6 +120,9 @@ alias ls='eza -la --color=always --group-directories-first --icons'
 alias la='eza -a --color=always --group-directories-first --icons'
 alias ll='eza -l --color=always --group-directories-first --icons'
 alias lt='eza -aT --color=always --group-directories-first --icons'
+
+# PLocate
+alias locate='plocate'
 
 # Pacman
 # abbr list-updates 'checkupdates; yay -Qua'
