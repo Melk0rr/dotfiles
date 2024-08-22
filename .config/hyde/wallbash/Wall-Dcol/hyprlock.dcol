@@ -52,7 +52,7 @@ image {
     path = $HOME/.config/hypr/face.png
     border_color = rgba(<wallbash_1xa8>dd)
     border_size = 0
-    size = 120
+    size = 160
     rounding = -1
     rotate = 0
     reload_time = -1
