@@ -16,4 +16,5 @@ wall.set
 **/oh-my-posh/omp.json
 **/rofi/theme.rasi
 **/sddm/**/theme.conf
+**/swappy/config
 **/waybar/theme.css
