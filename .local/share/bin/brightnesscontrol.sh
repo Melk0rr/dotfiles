@@ -3,52 +3,84 @@
 ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/globalcontrol.sh
 
+monitorInfo=$( ddcutil detect )
+monitors=($( echo "$monitorInfo" | grep "I2C bus:" | awk -F ': ' '{print $2}' ))
+model=$( echo "$monitorInfo" | grep "Model:" | awk -F ': ' '{print $2}' | head -n 1 | xargs )
+
 function print_error
 {
 cat << "EOF"
     ./brightnesscontrol.sh <action>
     ...valid actions are...
-        i -- <i>ncrease brightness [+5%]
-        d -- <d>ecrease brightness [-5%]
+        i -- <i>ncrease  brightness [+5%]
+        d -- <d>ecrease  brightness [-5%]
+        s -- <s>et VALUE brightness [VALUE%]
+        g -- <g>et       brightness
 EOF
 }
 
-function send_notification {
-    brightness=`brightnessctl info | grep -oP "(?<=\()\d+(?=%)" | cat`
-    brightinfo=$(brightnessctl info | awk -F "'" '/Device/ {print $2}')
-    angle="$(((($brightness + 2) / 5) * 5))"
-    ico="~/.config/dunst/icons/vol/vol-${angle}.svg"
-    bar=$(seq -s "." $(($brightness / 15)) | sed 's/[0-9]//g')
-    dunstify "t2" -i $ico -a "$brightness$bar" "$brightinfo" -r 91190 -t 800
+function get_brightness {
+    ddcutil getvcp 10 | awk -F 'current value = ' '{print $2}' | grep -o '[0-9]\+' | head -n 1
 }
 
-function get_brightness {
-    brightnessctl -m | grep -o '[0-9]\+%' | head -c-2
+function send_notification {
+    brightness=$(get_brightness)
+    angle=$(((($brightness + 2) / 5) * 5))
+    ico="$HOME/.config/dunst/icons/vol/vol-${angle}.svg"
+    
+    notify-send -a "t2" -r 91190 -t 800 -i "${ico}" "Brightness ${brightness}" "${model}"
+}
+
+function set_brightness {
+    for v in "${monitors[@]}" ; do
+        bus=$( echo $v | awk -F '-' '{print $2}' )
+        
+        case $1 in
+        i)
+            ddcutil setvcp 10 + $2 --bus=$bus
+            ;;
+        d)
+            ddcutil setvcp 10 - $2 --bus=$bus
+            ;;
+        *)
+            ddcutil setvcp 10 $2 --bus=$bus
+            ;;
+        esac
+    done
 }
 
 case $1 in
-i)  # increase the backlight
+i)
     if [[ $(get_brightness) -lt 10 ]] ; then
-        # increase the backlight by 1% if less than 10%
-        brightnessctl set +1%
+        # increase the brightness by 1% if less than 10%
+        set_brightness i 1
     else
-        # increase the backlight by 5% otherwise
-        brightnessctl set +5%
+        # increase the brightness by 5% otherwise
+        set_brightness i 5
     fi
     send_notification ;;
-d)  # decrease the backlight
-    if [[ $(get_brightness) -le 1 ]] ; then
+d)
+    if [[ $(get_brightness) -le 2 ]] ; then
         # avoid 0% brightness
-        brightnessctl set 1%
+        set_brightness s 2
     elif [[ $(get_brightness) -le 10 ]] ; then
-        # decrease the backlight by 1% if less than 10%
-        brightnessctl set 1%-
+        # decrease the brightness by 1% if less than 10%
+        set_brightness d 1
     else
-        # decrease the backlight by 5% otherwise
-        brightnessctl set 5%-
+        # decrease the brightness by 5% otherwise
+        set_brightness d 5
     fi
     send_notification ;;
-*)  # print error
+s)
+    if [[ $2 -le 2 ]] ; then
+        # avoid 0% brightness
+        set_brightness s 2
+    else
+        set_brightness s $2
+    fi
+    send_notification ;;
+g)
+    send_notification ;;
+*)
     print_error ;;
 esac
-
