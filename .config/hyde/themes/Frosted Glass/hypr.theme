@@ -8,7 +8,7 @@ $HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf
 
 exec = gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle-blue'
 exec = gsettings set org.gnome.desktop.interface gtk-theme 'Frosted-Glass'
-exec = gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+exec = gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 general {
     gaps_in = 4
