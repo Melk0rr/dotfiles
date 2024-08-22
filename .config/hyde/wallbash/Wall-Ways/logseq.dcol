@@ -37,6 +37,9 @@ $HOME/.logseq/custom.css
   --ls-border-color: #<wallbash_4xa1> !important;
   --ls-secondary-border-color: #<wallbash_3xa1> !important;
 
+  --ls-block-bullet-active-color: #<wallbash_4xa8> !important;
+  --ls-block-bullet-threading-active-color-overwrite: #<wallbash_4xa8> !important;
+
   --ct-h1-color: 1px solid #<wallbash_4xa4> !important;
   --ct-h2-color: 1px solid #<wallbash_4xa4> !important;
   --ct-h3-color: 1px solid #<wallbash_4xa4> !important;
