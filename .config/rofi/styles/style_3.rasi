@@ -1,6 +1,6 @@
 // Config //
 configuration {
-    modi:                        "drun,filebrowser,window,run,calc";
+    modi:                        "drun,filebrowser,window,run";
     show-icons:                  true;
     display-drun:                " ";
     display-run:                 " ";
