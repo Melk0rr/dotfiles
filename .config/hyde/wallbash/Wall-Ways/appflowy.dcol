@@ -1,4 +1,4 @@
-$HOME/.config/appflowy/wallbash.flowy_plugin/wallbash.dark.json|cp $HOME/.config/appflowy/wallbash.flowy_plugin/wallbash.dark.json $HOME/.config/wallbash.flowy_plugin/wallbash.light.json
+$HOME/.config/appflowy/wallbash.flowy_plugin/wallbash.dark.json|cp -f $HOME/.config/appflowy/wallbash.flowy_plugin/wallbash.dark.json $HOME/.config/appflowy/wallbash.flowy_plugin/wallbash.light.json
 {
   "surface": "0xff<wallbash_pry1>",
   "hover": "0xff<wallbash_1xa1>",
