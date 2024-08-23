@@ -60,10 +60,11 @@ $HOME/.config/oh-my-posh/omp.json
               "{{ if gt .Ahead 0 }}#<wallbash_2xa9>{{{ end }}",
               "{{ if gt .Behind 0 }}#<wallbash_4xa8>{{ end }}"
             ],
-            "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+            "template": " {{ if( .UpstreamIcon ) }}{{ url .UpstreamIcon .UpstreamURL }}{{ end }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
             "properties": {
               "fetch_stash_count": true,
-              "fetch_status": true
+              "fetch_status": true,
+              "fetch_upstream_icon": true
             }
           },
           {
