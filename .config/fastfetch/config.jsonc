@@ -11,6 +11,7 @@
     },
     "modules": [
         {
+            "format": "   {user-name-colored}@{host-name-colored}",
             "type": "title"
         },
         {
