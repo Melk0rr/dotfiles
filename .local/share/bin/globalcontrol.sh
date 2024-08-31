@@ -1,14 +1,26 @@
 #!/usr/bin/env sh
 
+# HYDE-CLI
+export CLI_PATH=$(dirname $(dirname ${0}))
+export PATH=$PATH:${CLI_PATH}/lib/hyde-cli/
+export HYDE_RUNTIME_DIR=$XDG_RUNTIME_DIR/hyde
+
+# Cli Configs
+export etcDir="/etc/hyde-cli"
+ [[ "${CLI_PATH}" == *"/usr"* ]] || etcDir="$HOME/.hyde"
+export usrDir="${CLI_PATH}/share/hyde-cli"
 
 #// hyde envs
-
 export confDir="${XDG_CONFIG_HOME:-$HOME/.config}"
 export hydeConfDir="${confDir}/hyde"
 export cacheDir="$HOME/.cache/hyde"
 export thmbDir="${cacheDir}/thumbs"
 export dcolDir="${cacheDir}/dcols"
 export hashMech="sha1sum"
+
+source_user() {
+    [ -f "${hydeConfDir}/hyde.conf" ] && . "${hydeConfDir}/hyde.conf"
+}
 
 get_hashmap()
 {
@@ -99,7 +111,7 @@ get_themes()
     fi
 }
 
-[ -f "${hydeConfDir}/hyde.conf" ] && source "${hydeConfDir}/hyde.conf"
+source_user
 
 case "${enableWallDcol}" in
     0|1|2|3) ;;
@@ -172,3 +184,62 @@ set_hash()
     "${hashMech}" "${hashImage}" | awk '{print $1}'
 }
 
+enable_package() {
+    local Pkg_Dep=$(for PkgIn in "$@"; do ! pkg_installed $PkgIn && echo "$PkgIn"; done)
+    if [[ -n "${Pkg_Dep}" ]]; then
+        echo -e "$0 Dependencies:\n$Pkg_Dep"
+        get_aurhlpr
+        if [ -n "${DISPLAY}" ]; then
+            notify-send -a "${0}" "Confirm to install dependencies: '${Pkg_Dep}'" -t 10000
+            print_prompt -y "Confirm to install dependencies: '${Pkg_Dep}'"
+            { pkexec --user "${USER}" env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY "${aurhlpr}" -S $Pkg_Dep --noconfirm && notify-send "Installed: ${Pkg_Dep}"; } || { notify-send "Operation Cancelled" && exit 1; }
+        else
+            print_prompt -y "Confirm to install dependencies: '${Pkg_Dep}'"
+            { "${aurhlpr}" -S $Pkg_Dep --noconfirm && print_prompt -y "Installed: ${Pkg_Dep}"; } || { print_prompt -r "Operation cancelled" && exit 1; }
+        fi
+
+    fi
+}
+
+rofi_pos() {
+    pkill -x rofi && exit
+    enable_package rofi jq
+    source_user
+    roConf="${confDir}/rofi/clipboard.rasi"
+
+    #// set rofi scaling
+
+    [[ "${rofiScale}" =~ ^[0-9]+$ ]] || rofiScale=10
+    fnt_override="configuration {font: \"JetBrainsMono Nerd Font ${rofiScale}\";}"
+    wind_border=$((hypr_border * 3 / 2))
+    elem_border=$([ $hypr_border -eq 0 ] && echo "5" || echo $hypr_border)
+
+    #// evaluate spawn position
+
+    readarray -t curPos < <(hyprctl cursorpos -j | jq -r '.x,.y')
+    readarray -t monRes < <(hyprctl -j monitors | jq '.[] | select(.focused==true) | .width,.height,.scale,.x,.y')
+    readarray -t offRes < <(hyprctl -j monitors | jq -r '.[] | select(.focused==true).reserved | map(tostring) | join("\n")')
+    monRes[2]="$(echo "${monRes[2]}" | sed "s/\.//")"
+    monRes[0]="$((${monRes[0]} * 100 / ${monRes[2]}))"
+    monRes[1]="$((${monRes[1]} * 100 / ${monRes[2]}))"
+    curPos[0]="$((${curPos[0]} - ${monRes[3]}))"
+    curPos[1]="$((${curPos[1]} - ${monRes[4]}))"
+
+    if [ "${curPos[0]}" -ge "$((${monRes[0]} / 2))" ]; then
+        x_pos="east"
+        x_off="-$((${monRes[0]} - ${curPos[0]} - ${offRes[2]}))"
+    else
+        x_pos="west"
+        x_off="$((${curPos[0]} - ${offRes[0]}))"
+    fi
+
+    if [ "${curPos[1]}" -ge "$((${monRes[1]} / 2))" ]; then
+        y_pos="south"
+        y_off="-$((${monRes[1]} - ${curPos[1]} - ${offRes[3]}))"
+    else
+        y_pos="north"
+        y_off="$((${curPos[1]} - ${offRes[1]}))"
+    fi
+
+    r_override="window{location:${x_pos} ${y_pos};anchor:${x_pos} ${y_pos};x-offset:${x_off}px;y-offset:${y_off}px;border:${hypr_width}px;border-radius:${wind_border}px;} wallbox{border-radius:${elem_border}px;} element{border-radius:${elem_border}px;}"
+}
