@@ -4,10 +4,11 @@
 wallpapers/
 wall.set
 
-# Dunst icons
-**/dunst/icons
+# Hyde cache
+.cache/hyde/dcols/
 
 # Dynamically generated files
+**/dunst/icons
 **/dunst/wallbash.conf
 **/dunst/dunstrc
 **/Kvantum/wallbash
