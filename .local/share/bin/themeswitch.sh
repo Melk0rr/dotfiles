@@ -84,10 +84,6 @@ grep 'gsettings set org.gnome.desktop.interface icon-theme' "${hydeThemeDir}/hyp
 sed -i "/^icon_theme=/c\icon_theme=${gtkIcon}" "${confDir}/qt5ct/qt5ct.conf"
 sed -i "/^icon_theme=/c\icon_theme=${gtkIcon}" "${confDir}/qt6ct/qt6ct.conf"
 
-#// openrgb
-ln -fs "${hydeThemeDir}/openrgb.orp" "${confDir}/OpenRGB/theme.orp"
-openrgb --profile theme.orp
-
 #// gtk3
 
 sed -i "/^gtk-theme-name=/c\gtk-theme-name=Wallbash-Gtk" $confDir/gtk-3.0/settings.ini
