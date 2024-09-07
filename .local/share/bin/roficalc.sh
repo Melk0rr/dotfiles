@@ -45,7 +45,7 @@ main() {
     add_to_history "${history_file}" "${equation}"
     unset result
     result="$(result_from_equation "${equation}")"
-    NOTIFY -a "Result: " "${result}" & #-i ${usrDir}/show-calculator.svg 
+    notify-send -a "Result: " "${result}" & #-i ${usrDir}/show-calculator.svg 
     wl-copy "${result}"
   done
 }

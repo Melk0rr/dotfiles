@@ -201,6 +201,58 @@ enable_package() {
     fi
 }
 
+print_prompt() {
+    while (("$#")); do
+        case "$1" in
+        -r|+r)
+            echo -ne "\e[31m$2\e[0m"
+            shift 2
+            ;; # Red
+        -g|+g)
+            echo -ne "\e[32m$2\e[0m"
+            shift 2
+            ;; # Green
+        -y|+y)
+            echo -ne "\e[33m$2\e[0m"
+            shift 2
+            ;; # Yellow
+        -b|+b)
+            echo -ne "\e[34m$2\e[0m"
+            shift 2
+            ;; # Blue
+        -m|+m)
+            echo -ne "\e[35m$2\e[0m"
+            shift 2
+            ;; # Magenta
+        -c|+c)
+            echo -ne "\e[36m$2\e[0m"
+            shift 2
+            ;; # Cyan
+        -wt|+w)
+            echo -ne "\e[37m$2\e[0m"
+            shift 2
+            ;; # White
+        -n|+n)
+            echo -ne "\e[96m$2\e[0m"
+            shift 2
+            ;; # Neon
+        -crit)
+            echo -ne "\e[38;5;160m$2\e[0m"
+            shift 2
+            ;; # Neon            
+        +)
+            echo -ne "\e[38;5;$2m$3\e[0m"
+            shift 3
+            ;;
+        *)
+            echo -ne "$1"
+            shift
+            ;;
+        esac
+    done
+    echo ""
+}
+
 rofi_pos() {
     pkill -x rofi && exit
     enable_package rofi jq
