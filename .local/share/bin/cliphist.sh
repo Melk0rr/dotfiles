@@ -14,7 +14,7 @@ rofi_pos
 
 case "${1}" in
 c|-c|--copy)
-    cliphist list | rofi -dmenu -theme-str "entry { placeholder: \"Copy...\";}" -theme-str "${r_scale}" -theme-str "${r_override}" -config "${roconf}" | cliphist decode | wl-copy
+    cliphist list | rofi -dmenu -theme-str "entry { placeholder: \"Copy...\";}" -theme-str "${r_scale}" -theme-str "${r_override}" -theme-str "${fnt_override}" -config "${roconf}" | cliphist decode | wl-copy
     ;;
 d|-d|--delete)
     cliphist list | rofi -dmenu -theme-str "entry { placeholder: \"Delete...\";}" -theme-str "${r_scale}" -theme-str "${r_override}" -config "${roconf}" | cliphist delete
