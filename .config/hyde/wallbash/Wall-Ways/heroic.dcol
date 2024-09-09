@@ -1,13 +1,13 @@
 $HOME/.config/heroic/themes/wallbash.css
 body.wallbash {
   --accent: #<wallbash_1xa5;
-  --accent-overlay: #<wallbash_1xa2>;
-  --navbar-accent: #<wallbash_3xa1>;
+  --accent-overlay: #<wallbash_1xa3>;
+  --navbar-accent: #<wallbash_1xa7>;
   --background: #<wallbash_pry1>;
   --body-background: var(--background);
   --background-darker: var(--body-background);
   --current-background: var(--body-background);
-  --navbar-background: #<wallbash_pry3>;
+  --navbar-background: #<wallbash_1xa3>;
   --navbar-active: #<wallbash_txt3>;
   --navbar-active-background: #<wallbash_pry3>;
   --gradient-body-background: linear-gradient(
