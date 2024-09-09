@@ -2,7 +2,6 @@
 configuration {
     modi:                        "calc";
     show-icons:                  false;
-    font:                        "JetBrainsMono Nerd Font 14";
 }
 
 @theme "~/.config/rofi/theme.rasi"
