@@ -68,7 +68,7 @@ function cleanup
 	clear-syslogs
 end
 
-function list-updates
+function lsupd
 	echo "* Official updates *"
 	checkupdates
 	echo -e "\n* AUR Updates *"
@@ -94,6 +94,14 @@ end
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
+end
+
+function chroot-build
+	mkdir -p ~/Documents/chroot/
+	set CHROOT $HOME/Documents/chroot
+
+	mkarchroot $CHROOT/root base-devel
+	makechrootpkg -c -r $CHROOT
 end
 
 ############# Aliases & Abbreviations ############# 
