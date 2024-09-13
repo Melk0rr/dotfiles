@@ -5,7 +5,7 @@ wallpapers/
 wall.set
 
 # Hyde cache
-.cache/hyde/dcols/
+.cache/hyde/dcols/*
 !808c0b19763578d7d6d93f8470bbea1d54b4b340.dcol
 !80b32febd71ad5b4c7886fb2e0e2cd341f424fa2.dcol
 
