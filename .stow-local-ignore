@@ -1,4 +1,6 @@
 .git
+.gitignore
+.directory
 .vscode-oss
 .mozilla
 .themes
