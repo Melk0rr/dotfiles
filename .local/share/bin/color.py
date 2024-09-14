@@ -43,6 +43,7 @@ def rgb_percentages(rgb: Tuple[int, int, int]) -> Tuple[float, float, float]:
 def rgb_2_hsl(rgb: Tuple[int, int, int]) -> Tuple[float, float, float]:
   """ Converts an RGB tuple into a HSL tuple """
   p = rgb_percentages(rgb=rgb)
+  red_p, green_p, blue_p = p
 
   min_rgb = min(p)
   max_rgb = max(p)
@@ -64,14 +65,14 @@ def rgb_2_hsl(rgb: Tuple[int, int, int]) -> Tuple[float, float, float]:
   if s == 0:
     h = 0
 
-  elif p[0] >= max(p[1], p[2]):
-    h = (p[1] - p[2]) / (max_rgb - min_rgb)
+  elif red_p >= max(green_p, blue_p):
+    h = (green_p - blue_p) / (max_rgb - min_rgb)
     
-  elif p[1] >= max(p[0], p[2]):
-    h = 2 + (p[2] - p[0]) / (max_rgb - min_rgb)
+  elif green_p >= max(red_p, blue_p):
+    h = 2 + (blue_p - red_p) / (max_rgb - min_rgb)
     
   else:
-    h = 4 + (p[0] - p[1]) / (max_rgb - min_rgb)
+    h = 4 + (red_p - green_p) / (max_rgb - min_rgb)
     
   h = h * 60
   
@@ -150,7 +151,7 @@ def max_saturation(color: Union[str, Tuple[int, int, int]]) -> str:
 def openrgb_color(hex_str: str) -> None:
   """ Adjust the given color for openrgb """
   sat = max_saturation(hex_str)
-  print(print(new_hex))
+  print(sat)
   
 
 
