@@ -12,17 +12,7 @@ trap 'rm -f ${lockFile}' EXIT
 #// define functions
 
 Wall_Cache()
-{   
-    wppFile=$(basename "${wallList[setIndex]}")
-    wppName=$(echo "${wppFile}" | awk -F '.' '{print $1}')
-
-    #// openrgb
-    if [[ -f "${cacheDir}/orp/${wppName}.orp" ]] ; then
-        ln -fs "${cacheDir}/orp/${wppName}.orp" "${confDir}/OpenRGB/theme.orp" 
-    else
-        ln -fs "${hydeThemeDir}/openrgb.orp" "${confDir}/OpenRGB/theme.orp"
-    fi
-    
+{       
     ln -fs "${wallList[setIndex]}" "${wallSet}"
     ln -fs "${wallList[setIndex]}" "${wallCur}"
     "${scrDir}/swwwallcache.sh" -w "${wallList[setIndex]}" &> /dev/null
@@ -122,5 +112,3 @@ fi
 #// apply wallpaper
 echo ":: applying wall :: \"$(readlink -f "${wallSet}")\""
 swww img "$(readlink "${wallSet}")" --transition-bezier .43,1.19,1,.4 --transition-type "${xtrans}" --transition-duration "${wallTransDuration}" --transition-fps "${wallFramerate}" --invert-y --transition-pos "$(hyprctl cursorpos)" &
-
-openrgb --profile theme.orp
