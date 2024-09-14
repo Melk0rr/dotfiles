@@ -144,6 +144,7 @@ abbr fix-key 'sudo rm /var/lib/pacman/sync/* && sudo rm -rf /etc/pacman.d/gnupg/
 abbr rcc 'rclone copy'
 
 # Git & dev
+abbr gin 'git init'
 abbr gcl 'git clone'
 abbr gcm 'git commit -m'
 abbr ga 'git add'
