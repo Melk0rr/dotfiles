@@ -37,10 +37,6 @@ OpenRGB_Wallbash () {
 
   openrgbCmd="openrgb"
 
-  if [[ "${start}" == true ]] ; then
-    openrgbCmd+=" --startminimized"
-  fi
-
   i=0
   while read -r line ; do
     if [[ $line =~ ^# ]] ; then
@@ -50,16 +46,20 @@ OpenRGB_Wallbash () {
     i=$((i+1));
   done < "$col"
   
-  openrgbCmd+=" -sp wallbash.orp"
+  if [[ "${start}" == false ]] ; then
+    openrgbCmd+=" -sp wallbash.orp"
+  fi
+  
   eval "$openrgbCmd"
 }
 
 OpenRGB_Start () {
+  openrgb --startminimized
   if [[ "${mode}" == "wallbash" ]] ; then
     OpenRGB_Wallbash
 
   else
-    openrgb --startminimized --profile theme.orp
+    openrgb --profile theme.orp
   fi
 }
 
