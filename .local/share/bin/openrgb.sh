@@ -15,14 +15,28 @@ themeProf="${hydeThemeDir}/openrgb.orp"
 customCol="${cacheDir}/orp/${wppName}.conf"
 openrgbCol="$HOME/.config/OpenRGB/colors.conf"
 
-baseMainCol=$(grep "@main" "${openrgbCol}" | awk -F ':' '{print $2}')
-baseSecondCol=$(grep "@secondary" "${openrgbCol}" | awk -F ':' '{print $2}')
+baseMainCol=$(grep "@color1" "${openrgbCol}" | awk -F ':' '{print $2}')
+baseSecondCol=$(grep "@color4" "${openrgbCol}" | awk -F ':' '{print $2}')
+baseThirdCol=$(grep "@color3" "${openrgbCol}" | awk -F ':' '{print $2}')
+baseFourthCol=$(grep "@color2" "${openrgbCol}" | awk -F ':' '{print $2}')
 
 Adjust_Wallbash () {
   satMainCol=$(python3 -c "import color; color.openrgb_color('#${baseMainCol}')")
-  satSedoncCol=$(python3 -c "import color; color.openrgb_color('#${baseSecondCol}')")
+  satSecondCol=$(python3 -c "import color; color.openrgb_color('#${baseSecondCol}')")
+  satThirdCol=$(python3 -c "import color; color.openrgb_color('#${baseThirdCol}')")
+
+  newSecondCol="${satSecondCol}"
+  
+  distance1=$(python3 -c "import color; color.hex_color_distance('#${satMainCol:1}', '#${satSecondCol:1}')")
+  distance2=$(python3 -c "import color; color.hex_color_distance('#${satMainCol:1}', '#${satThirdCol:1}')")
+
+  echo "${distance1} / ${distance2}"
+  if [[ "${distance2}" > "${distance1}" ]] ; then
+    newSecondCol="${satThirdCol}"
+  fi
+
   sed -i "s/${baseMainCol}/${satMainCol:1}/g" "${openrgbCol}"
-  sed -i "s/${baseSecondCol}/${satSedoncCol:1}/g" "${openrgbCol}"
+  sed -i "s/${baseSecondCol}/${newSecondCol:1}/g" "${openrgbCol}"
 }
 
 OpenRGB_Wallbash () {
@@ -36,6 +50,10 @@ OpenRGB_Wallbash () {
   fi
 
   openrgbCmd="openrgb"
+
+  if [[ "${start}" == true ]] ; then
+    openrgbCmd+=" --startminimized"
+  fi
 
   i=0
   while read -r line ; do
@@ -54,7 +72,6 @@ OpenRGB_Wallbash () {
 }
 
 OpenRGB_Start () {
-  openrgb --startminimized
   if [[ "${mode}" == "wallbash" ]] ; then
     OpenRGB_Wallbash
 
