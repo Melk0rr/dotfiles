@@ -1,6 +1,8 @@
 $HOME/.config/OpenRGB/colors.conf|${scrDir}/openrgb.sh g
-@main:<wallbash_1xa5>
-@secondary:<wallbash_4xa5>
+@color1:<wallbash_1xa5>
+@color2:<wallbash_2xa5>
+@color3:<wallbash_3xa5>
+@color4:<wallbash_4xa5>
 # 0: Corsair Vengeance Pro RGB
 <wallbash_1xa5>
 # 1: Corsair Vengeance Pro RGB
