@@ -72,8 +72,11 @@ body::before {
   --color-accent: var(--color-purple);
   --palette-accent-500: var(--color-accent);
   --color-info-bar: var(--color-tag-title);
-  --mdc-dialog-container-color: #<wallbash_1xa3> !important;
-  --mdc-filled-button-container-color: #<wallbash_3xa7> !important;
+  --mdc-dialog-container-color: #<wallbash_1xa3>;
+  --mdc-filled-button-container-color: #<wallbash_3xa7>;
+}
+.mat-mdc-dialog-surface {
+  background-color: #<wallbash_1xa3>;
 }
 * {
   box-shadow: none !important;
