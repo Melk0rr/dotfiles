@@ -1,4 +1,5 @@
 import re
+from math import sqrt
 from typing import Union, Tuple
 
 HEX_REG = r'^(?:#?)(?:[0-9A-Fa-f]{3}){1,2}$'
@@ -147,6 +148,20 @@ def max_saturation(color: Union[str, Tuple[int, int, int]]) -> str:
   new_hex = rgb_2_hex(hsl_2_rgb(hsl))
   
   return new_hex
+
+def hex_color_distance(color1: str, color2: str) -> None:
+  """ Calculates a simple color distance """
+  rgb1 = hex_2_rgb(color1)
+  rgb2 = hex_2_rgb(color2)
+  
+  rc = pow(rgb2[0] - rgb1[0], 2)
+  gc = pow(rgb2[1] - rgb1[1], 2)
+  bc = pow(rgb2[2] - rgb1[2], 2)
+
+  rcqrt = sqrt(rc + gc + bc)
+  pqrt = sqrt(pow(255, 2) + pow(255, 2) + pow(255, 2))
+  
+  print((rcqrt / pqrt)) 
 
 def openrgb_color(hex_str: str) -> None:
   """ Adjust the given color for openrgb """
