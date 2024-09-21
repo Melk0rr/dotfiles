@@ -92,16 +92,15 @@ function copy
 	end
 end
 
-if status is-interactive
-    # Commands to run in interactive sessions can go here
+function ffmpeg-convert
+	for f in *.$argv[1];
+		set fname (string split -r -m1 . $f)[1]
+		ffmpeg -i "$f" "$fname.$argv[2]"
+	end
 end
 
-function chroot-build
-	mkdir -p ~/Documents/chroot/
-	set CHROOT $HOME/Documents/chroot
-
-	mkarchroot $CHROOT/root base-devel
-	makechrootpkg -c -r $CHROOT
+if status is-interactive
+    # Commands to run in interactive sessions can go here
 end
 
 ############# Aliases & Abbreviations ############# 
@@ -139,6 +138,7 @@ abbr clean-orphans 'pacman -Qtdq | sudo pacman -Rns -'
 abbr uninstall 'sudo pacman -Rns'
 abbr update-mirrors 'sudo reflector --verbose --score 100 --latest 20 --fastest 5 --sort rate --save /etc/pacman.d/mirrorlist'
 abbr fix-key 'sudo rm /var/lib/pacman/sync/* && sudo rm -rf /etc/pacman.d/gnupg/* && sudo pacman-key --init && sudo pacman-key --populate && sudo pacman -Sy --noconfirm archlinux-keyring && sudo pacman --noconfirm -Su'
+abbr chroot-build 'mkdir -p ~/Documents/chroot/; set CHROOT $HOME/Documents/chroot; mkarchroot $CHROOT/root base-devel; makechrootpkg -c -r $CHROOT; rm -rf $CHROOT'
 
 # Rclone
 abbr rcc 'rclone copy'
