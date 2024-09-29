@@ -21,22 +21,25 @@ baseThirdCol=$(grep "@color3" "${openrgbCol}" | awk -F ':' '{print $2}')
 baseFourthCol=$(grep "@color2" "${openrgbCol}" | awk -F ':' '{print $2}')
 
 Adjust_Wallbash () {
-  satMainCol=$(python3 -c "import color; color.openrgb_color('#${baseMainCol}')")
-  satSecondCol=$(python3 -c "import color; color.openrgb_color('#${baseSecondCol}')")
-  satThirdCol=$(python3 -c "import color; color.openrgb_color('#${baseThirdCol}')")
+  satMainCol=$(monet -c "#${baseMainCol}" -s 1)
+  satSecondCol=$(monet -c "#${baseSecondCol}" -s 1)
+  satThirdCol=$(monet -c "#${baseThirdCol}" -s 1)
 
   newSecondCol="${satSecondCol}"
+  oldSecondCol="${baseSecondCol}"
   
-  distance1=$(python3 -c "import color; color.hex_color_distance('#${satMainCol:1}', '#${satSecondCol:1}')")
-  distance2=$(python3 -c "import color; color.hex_color_distance('#${satMainCol:1}', '#${satThirdCol:1}')")
+  distance1=$(monet -c "${satMainCol}" -c "${satSecondCol}" -d)
+  distance2=$(monet -c "${satMainCol}" -c "${satThirdCol}" -d)
 
-  echo "${distance1} / ${distance2}"
   if [[ "${distance2}" > "${distance1}" ]] ; then
     newSecondCol="${satThirdCol}"
+    oldSecondCol="${baseThirdCol}"
   fi
 
+  echo "${satMainCol}, ${newSecondCol}"
+
   sed -i "s/${baseMainCol}/${satMainCol:1}/g" "${openrgbCol}"
-  sed -i "s/${baseSecondCol}/${newSecondCol:1}/g" "${openrgbCol}"
+  sed -i "s/${oldSecondCol}/${newSecondCol:1}/g" "${openrgbCol}"
 }
 
 OpenRGB_Wallbash () {
@@ -52,7 +55,7 @@ OpenRGB_Wallbash () {
   openrgbCmd="openrgb"
 
   if [[ "${start}" == true ]] ; then
-    openrgbCmd+=" --startminimized"
+    openrgbCmd+=" --startminimized --server"
   fi
 
   i=0
@@ -68,7 +71,8 @@ OpenRGB_Wallbash () {
     openrgbCmd+=" -sp wallbash.orp"
   fi
   
-  eval "$openrgbCmd"
+  echo -e "${openrgbCmd}\n"
+  eval "${openrgbCmd}"
 }
 
 OpenRGB_Start () {
