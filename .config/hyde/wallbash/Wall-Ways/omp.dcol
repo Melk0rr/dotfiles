@@ -37,7 +37,7 @@ $HOME/.config/oh-my-posh/omp.json
             "style": "diamond",
             "trailing_diamond": "\ue0b4",
             "foreground": "#<wallbash_2xa8>",
-            "background": "#<wallbash_pry4>",
+            "background": "#<wallbash_4xa2>",
             "template": " {{ .Path }} ",
             "properties": {
               "folder_separator_icon": " / ",
