@@ -9,9 +9,11 @@ wall.set
 
 # Hyde cache
 .cache/hyde/dcols/*
+!6bfeaf7f422209b300b1fe26357e9e3b552d9f85.dcol
 !808c0b19763578d7d6d93f8470bbea1d54b4b340.dcol
 !80b32febd71ad5b4c7886fb2e0e2cd341f424fa2.dcol
-!6bfeaf7f422209b300b1fe26357e9e3b552d9f85.dcol
+!be2cda9649590337330d46ae15272224efdeb075.dcol
+!d488c3eee7e676ace07b71faf2353228766b0395.dcol
 
 # Dynamically generated files
 **/dunst/icons
