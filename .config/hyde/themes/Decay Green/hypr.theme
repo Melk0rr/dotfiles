@@ -27,7 +27,7 @@ decoration {
     blur {
         enabled = yes
         size = 5
-        passes = 4
+        passes = 3
         new_optimizations = on
         ignore_opacity = on
         xray = false
