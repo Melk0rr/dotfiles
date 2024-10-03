@@ -15,30 +15,24 @@ themeProf="${hydeThemeDir}/openrgb.orp"
 customCol="${cacheDir}/orp/${wppName}.conf"
 openrgbCol="$HOME/.config/OpenRGB/colors.conf"
 
-baseMainCol=$(grep "@color1" "${openrgbCol}" | awk -F ':' '{print $2}')
-baseSecondCol=$(grep "@color4" "${openrgbCol}" | awk -F ':' '{print $2}')
-baseThirdCol=$(grep "@color3" "${openrgbCol}" | awk -F ':' '{print $2}')
-baseFourthCol=$(grep "@color2" "${openrgbCol}" | awk -F ':' '{print $2}')
+colors=($( cut -s -f 2 -d @ "${openrgbCol}" | cut -s -f 2 -d : ))
 
 Adjust_Wallbash () {
-  satMainCol=$(monet -c "#${baseMainCol}" -s 1)
-  satSecondCol=$(monet -c "#${baseSecondCol}" -s 1)
-  satThirdCol=$(monet -c "#${baseThirdCol}" -s 1)
+  monetSatCmd="monet -c $(echo "${colors[@]}" | sed 's/ / -c /g') -s 1"
+  saturated=($(eval "${monetSatCmd}"))
 
-  newSecondCol="${satSecondCol}"
-  oldSecondCol="${baseSecondCol}"
+  oldSecondCol="${colors[3]}"
+  newSecondCol="${saturated[3]}"
   
-  distance1=$(monet -c "${satMainCol}" -c "${satSecondCol}" -d)
-  distance2=$(monet -c "${satMainCol}" -c "${satThirdCol}" -d)
+  distance1=$(monet -c "${saturated[0]}" -c "${saturated[3]}" -d)
+  distance2=$(monet -c "${saturated[0]}" -c "${saturated[2]}" -d)
 
   if [[ "${distance2}" > "${distance1}" ]] ; then
-    newSecondCol="${satThirdCol}"
-    oldSecondCol="${baseThirdCol}"
+    oldSecondCol="${colors[2]}"
+    newSecondCol="${saturated[2]}"
   fi
 
-  echo "${satMainCol}, ${newSecondCol}"
-
-  sed -i "s/${baseMainCol}/${satMainCol:1}/g" "${openrgbCol}"
+  sed -i "s/${colors[0]}/${saturated[0]:1}/g" "${openrgbCol}"
   sed -i "s/${oldSecondCol}/${newSecondCol:1}/g" "${openrgbCol}"
 }
 
