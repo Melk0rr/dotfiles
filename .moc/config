@@ -124,7 +124,7 @@ FormatString = "%a (%A) - %t"
 # Sound driver - OSS, ALSA, JACK, SNDIO (on OpenBSD) or null (only for
 # debugging).  You can enter more than one driver as a colon-separated
 # list.  The first working driver will be used.
-SoundDriver = JACK:ALSA:OSS
+SoundDriver = ALSA:OSS:JACK
 
 # Jack output settings.
 #JackClientName = "moc"
@@ -144,7 +144,7 @@ SoundDriver = JACK:ALSA:OSS
 #
 #    ALSADevice=tee:hw,'/tmp/out.wav',wav
 #
-ALSADevice = sysdefault
+ALSADevice = hw:Loopback,1
 ALSAMixer1 = Speaker
 ALSAMixer2 = Master
 
@@ -186,12 +186,12 @@ ALSAMixer2 = Master
 HideFileExtension = yes
 
 # Show file format in menu?
-#ShowFormat = yes
+ShowFormat = no
 
 # Show file time in menu?  Possible values: 'yes', 'no' and 'IfAvailable'
 # (meaning show the time only when it is already known, which often works
 # faster).
-#ShowTime = IfAvailable
+ShowTime = no
 
 # Show time played as a percentage in the time progress bar.
 #ShowTimePercent = no
@@ -289,7 +289,7 @@ Keymap = /home/me1k0r/.moc/keymap
 #             Fastdir3 = /mp3/rap
 #             Fastdir4 = /mp3/etc
 #
-#Fastdir1 =
+Fastdir1 = /home/me1k0r/Music/mp3/playlists
 #Fastdir2 =
 #Fastdir3 =
 #Fastdir4 =
@@ -471,8 +471,8 @@ Keymap = /home/me1k0r/.moc/keymap
 #             and the directory menu at the bottom.  Playlist will
 #             occupy 10 lines and the directory menu the rest.
 #
-#Layout1 = directory(0,0,50%,100%):playlist(50%,0,FILL,100%)
-#Layout2 = directory(0,0,100%,100%):playlist(0,0,100%,100%)
+Layout1 = directory(0,0,100%,35%):playlist(0,35%,100%,FILL)
+#Layout2 = directory(0,0,50%,100%):playlist(50%,0,FILL,100%)
 #Layout3 = ""
 
 # When the song changes, should the menu be scrolled so that the currently

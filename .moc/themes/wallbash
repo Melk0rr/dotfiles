@@ -1,41 +1,41 @@
 ##############################################################################
 #
-# Nightshade theme (Version 6) by Dreyeth (dreyeth@openmailbox.org)
+# Wallbash theme
 #
 ##############################################################################
 
 background           = default  default normal
-frame                = magenta  default normal
-window_title         = magenta  default bold
+frame                = red      default normal
+window_title         = red      default bold
 directory            = blue     default normal
 selected_directory   = black    magenta normal
-playlist             = magenta  default normal
+playlist             = red      default normal
 selected_playlist    = black    magenta normal
-file                 = magenta  default normal
-selected_file        = black    magenta normal
-marked_file          = magenta  black   bold
-marked_selected_file = black    magenta bold
-info                 = magenta  default normal
-selected_info        = black    default normal
-marked_info          = magenta  black   normal
-marked_selected_info = black    magenta normal
-status               = magenta  black   bold
-title                = magenta  black   bold
-state                = magenta  black   bold
+file                 = red      default normal
+selected_file        = black    red     normal
+marked_file          = black    cyan    bold
+marked_selected_file = black    cyan    bold
+info                 = red      default normal
+selected_info        = black    blue    normal
+marked_info          = red      black   normal
+marked_selected_info = black    red     normal
+status               = red      default bold
+title                = red      default bold
+state                = magenta  default bold
 current_time         = magenta  default normal
 time_left            = magenta  default normal
 total_time           = magenta  default normal
-time_total_frames    = magenta  default normal
-sound_parameters     = magenta  default normal
+time_total_frames    = red      default normal
+sound_parameters     = red      default normal
 legend               = blue     default normal
-disabled             = blue     black   normal
-enabled              = magenta  black   normal
-empty_mixer_bar      = black    blue    normal
-filled_mixer_bar     = black    magenta normal
+disabled             = blue     default normal
+enabled              = red      default normal
+empty_mixer_bar      = red      default normal
+filled_mixer_bar     = black    red     normal
 empty_time_bar       = black    default normal
-filled_time_bar      = black    magenta normal
-entry                = black    default normal
-entry_title          = black    magenta normal
-error                = magenta  black   bold
+filled_time_bar      = black    red     normal
+entry                = black    red     normal
+entry_title          = black    red     normal
+error                = red      black   bold
 message              = blue     default bold
-plist_time           = magenta  default normal
+plist_time           = red      default normal
