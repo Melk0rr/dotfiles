@@ -103,7 +103,7 @@ if status is-interactive
 	function fish_greeting
 	end
 	
-	# Command not found hint
+	# Command not found hint (Arch)
 	function fish_command_not_found
 		if [ "$(uname)" = 'Linux' ]
 			/usr/bin/pkgfile $argv[1]
