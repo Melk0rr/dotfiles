@@ -144,7 +144,7 @@ SoundDriver = ALSA:OSS:JACK
 #
 #    ALSADevice=tee:hw,'/tmp/out.wav',wav
 #
-ALSADevice = hw:Loopback,1
+ALSADevice = default
 ALSAMixer1 = Speaker
 ALSAMixer2 = Master
 
@@ -289,7 +289,7 @@ Keymap = /home/me1k0r/.moc/keymap
 #             Fastdir3 = /mp3/rap
 #             Fastdir4 = /mp3/etc
 #
-Fastdir1 = /home/me1k0r/Music/mp3/playlists
+Fastdir1 = ${MusicDir}/playlists
 #Fastdir2 =
 #Fastdir3 =
 #Fastdir4 =
@@ -517,7 +517,7 @@ Layout1 = directory(0,0,100%,35%):playlist(0,35%,100%,FILL)
 # Examples:   ExecCommand1 = "cp %f /mnt/usb_drive"
 #             ExecCommand2 = "/home/joe/now_playing %I"
 #
-#ExecCommand1 =
+ExecCommand1 = "mocp -a '%f'"
 #ExecCommand2 =
 #ExecCommand3 =
 #ExecCommand4 =
@@ -662,7 +662,7 @@ MessageLingerTime = 0
 #
 # Example:    OnSongChange = "/home/jack/.moc/myscript %a %r"
 #
-#OnSongChange =
+#OnSongChange = "notify-send -a 't1' '%a - %t'"
 
 # If RepeatSongChange is 'yes' then MOC will execute the command every time
 # a song starts playing regardless of whether or not it is just repeating.
