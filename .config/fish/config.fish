@@ -1,10 +1,5 @@
 oh-my-posh init fish --config ~/.config/oh-my-posh/omp.json | source
 
-############# Functions ############# 
-# Fish greeting message
-function fish_greeting
-	fastfetch
-end
 
 # Print fish history
 function history
@@ -99,68 +94,88 @@ function ffmpeg-convert
 	end
 end
 
+# Commands to run in interactive sessions can go here
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+	# Vim keybindings
+	fish_vi_key_bindings
+	
+	# Fish greeting message
+	function fish_greeting
+	end
+	
+	# Command not found hint
+	function fish_command_not_found
+		if [ "$(uname)" = 'Linux' ]
+			/usr/bin/pkgfile $argv[1]
+		end
+	end
+
+	############# Aliases & Abbreviations ############# 
+	alias grep='grep --color'
+
+	# Install date
+	abbr install-date 'stat -c %w / | cut -b 1-16'
+
+	# Fastfetch
+	abbr ff 'fastfetch'
+
+	# Process and journals
+	abbr psa 'ps auxf'
+	abbr psmem 'ps auxf | sort -nr -k 4'
+	abbr pscpu 'ps auxf | sort -nr -k 3'
+	abbr jctl 'journalctl -p 3 -xb'
+
+	# Patching
+	abbr patch-file 'diff -Naru'
+	abbr patch-dir 'diff -crB'
+
+	# LS
+	alias ls='eza -la --color=always --group-directories-first --icons'
+	alias la='eza -a --color=always --group-directories-first --icons'
+	alias ll='eza -l --color=always --group-directories-first --icons'
+	alias lt='eza -aT --color=always --group-directories-first --icons'
+
+	# PLocate
+	alias locate='plocate'
+
+	# Pacman
+	# abbr list-updates 'checkupdates; yay -Qua'
+	abbr clean-arch 'yay -Sc && yay -Yc'
+	abbr clean-orphans 'pacman -Qtdq | sudo pacman -Rns -'
+	abbr uninstall 'sudo pacman -Rns'
+	abbr update-mirrors 'sudo reflector --verbose --score 100 --latest 20 --fastest 5 --sort rate --save /etc/pacman.d/mirrorlist'
+	abbr fix-key 'sudo rm /var/lib/pacman/sync/* && sudo rm -rf /etc/pacman.d/gnupg/* && sudo pacman-key --init && sudo pacman-key --populate && sudo pacman -Sy --noconfirm archlinux-keyring && sudo pacman --noconfirm -Su'
+	abbr chroot-build 'mkdir -p ~/Documents/chroot/; set CHROOT $HOME/Documents/chroot; mkarchroot $CHROOT/root base-devel; makechrootpkg -c -r $CHROOT'
+
+	# Rclone
+	abbr rcc 'rclone copy'
+
+	# Git & dev
+	abbr gin 'git init'
+	abbr gcl 'git clone'
+	abbr gcm 'git commit -m'
+	abbr ga 'git add'
+	abbr gaa 'git add --all'
+	abbr gs 'git status'
+	abbr gss 'git status --short'
+	abbr gst 'git stash'
+	abbr gp 'git push'
+	abbr gpl 'git pull'
+	abbr gdi 'git diff'
+	abbr gmr 'git merge'
+	abbr gco 'git checkout'
+	abbr gb 'git branch'
+	abbr gre 'git rebase'
+
+	# yt-dlp
+	abbr ytdl 'yt-dlp --output "%(title)s.%(ext)s"'
+	abbr ytdlp 'yt-dlp --audio-format mp3 -i --output "%(playlist_index)s-%(title)s.%(ext)s"'
+	abbr ytdla 'yt-dlp --audio-format mp3 -i -x -f bestaudio/best --output "%(playlist_index)s-%(title)s.%(ext)s"'
+
+	alias py='python3'
+
+
+	# Zoxide
+	zoxide init --cmd cd fish | source
+
 end
-
-############# Aliases & Abbreviations ############# 
-alias grep='grep --color'
-
-# Install date
-abbr install-date 'stat -c %w / | cut -b 1-16'
-
-# Fastfetch
-abbr ff 'fastfetch'
-
-# Process and journals
-abbr psa 'ps auxf'
-abbr psmem 'ps auxf | sort -nr -k 4'
-abbr pscpu 'ps auxf | sort -nr -k 3'
-abbr jctl 'journalctl -p 3 -xb'
-
-# Patching
-abbr patch-file 'diff -Naru'
-abbr patch-dir 'diff -crB'
-
-# LS
-alias ls='eza -la --color=always --group-directories-first --icons'
-alias la='eza -a --color=always --group-directories-first --icons'
-alias ll='eza -l --color=always --group-directories-first --icons'
-alias lt='eza -aT --color=always --group-directories-first --icons'
-
-# PLocate
-alias locate='plocate'
-
-# Pacman
-# abbr list-updates 'checkupdates; yay -Qua'
-abbr clean-arch 'yay -Sc && yay -Yc'
-abbr clean-orphans 'pacman -Qtdq | sudo pacman -Rns -'
-abbr uninstall 'sudo pacman -Rns'
-abbr update-mirrors 'sudo reflector --verbose --score 100 --latest 20 --fastest 5 --sort rate --save /etc/pacman.d/mirrorlist'
-abbr fix-key 'sudo rm /var/lib/pacman/sync/* && sudo rm -rf /etc/pacman.d/gnupg/* && sudo pacman-key --init && sudo pacman-key --populate && sudo pacman -Sy --noconfirm archlinux-keyring && sudo pacman --noconfirm -Su'
-abbr chroot-build 'mkdir -p ~/Documents/chroot/; set CHROOT $HOME/Documents/chroot; mkarchroot $CHROOT/root base-devel; makechrootpkg -c -r $CHROOT'
-
-# Rclone
-abbr rcc 'rclone copy'
-
-# Git & dev
-abbr gin 'git init'
-abbr gcl 'git clone'
-abbr gcm 'git commit -m'
-abbr ga 'git add'
-abbr gaa 'git add --all'
-abbr gs 'git status'
-abbr gst 'git stash'
-abbr gp 'git push'
-abbr gpl 'git pull'
-abbr gdi 'git diff'
-abbr gmr 'git merge'
-abbr gco 'git checkout'
-abbr gb 'git branch'
-abbr gre 'git rebase'
-
-alias py='python3'
-
-
-# Zoxide
-zoxide init --cmd cd fish | source
