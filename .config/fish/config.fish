@@ -1,104 +1,103 @@
-oh-my-posh init fish --config ~/.config/oh-my-posh/omp.json | source
-
-
-# Print fish history
-function history
-	builtin history --show-time='%F %T'
-end
-
-function histop
-	history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
-end
-
-# Clear fish history
-function clear-fish-history
-	echo 'Clearing fish history...'
-	rm -fv ~/.local/share/fish/fish_history
-	sudo rm -fv /root/.local/share/fish/fish_history
-	rm -fv ~/.config/fish/fish_history
-	sudo rm -fv /root/.config/fish/fish_history
-end
-
-# Empty trash directories
-function empty-trash
-	echo 'Emptying trash...'
-	
-	# Global trash
-	sudo rm -rfv ~/.local/share/Trash/*
-	sudo rm -rfv /root/.local/share/Trash/*
-end
-
-# Clear temporary files
-function clear-temp
-	echo 'Clearing temporary files...'
-	sudo rm -rfv /tmp/*
-	sudo rm -rfv /var/tmp/*
-end
-
-# Clear crash reports
-function clear-crash-reports
-	echo 'Clearing crash reports...'
-	sudo rm -rfv /var/crash/*
-	sudo rm -rfv /var/lib/systemd/coredump/
-end
-
-# Clear system logs
-function clear-syslogs
-	echo 'Clearing system logs...'
-	if ! command -v 'journalctl' &> /dev/null
-		echo 'Skipping because journalctl was not found'
-	else
-		sudo journalctl --vacuum-time=1s
-	end
-
-	sudo rm -rfv /run/log/journal/*
-	sudo rm -rfv /var/log/journal/*
-end
-
-# Combined cleanup
-function cleanup
-	empty-trash
-	clear-temp
-	clear-crash-reports
-	clear-syslogs
-end
-
-function lsupd
-	echo "* Official updates *"
-	checkupdates
-	echo -e "\n* AUR Updates *"
-	yay -Qua
-end
-
-# Create a backup of the given file
-function backup-file --argument filename
-	sudo cp $filename $filename.bak
-end
-
-# Copy file
-function copy
-	set count (count $argv | tr -d \n)
-	if test "$count" = 2; and test -d "$argv[1]"
-		set from (echo $argv[1] | trim-right /)
-		set to (echo $argv[2])
-		command cp -r $from $to
-	else
-		command cp $argv
-	end
-end
-
-function ffmpeg-convert
-	for f in *.$argv[1];
-		set fname (string split -r -m1 . $f)[1]
-		ffmpeg -i "$f" "$fname.$argv[2]"
-	end
-end
-
 # Commands to run in interactive sessions can go here
 if status is-interactive
 	# Vim keybindings
 	fish_vi_key_bindings
 	
+	oh-my-posh init fish --config ~/.config/oh-my-posh/omp.json | source
+
+	# Print fish history
+	function history
+		builtin history --show-time='%F %T'
+	end
+
+	function histop
+		history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
+	end
+
+	# Clear fish history
+	function clear-fish-history
+		echo 'Clearing fish history...'
+		rm -fv ~/.local/share/fish/fish_history
+		sudo rm -fv /root/.local/share/fish/fish_history
+		rm -fv ~/.config/fish/fish_history
+		sudo rm -fv /root/.config/fish/fish_history
+	end
+
+	# Empty trash directories
+	function empty-trash
+		echo 'Emptying trash...'
+		
+		# Global trash
+		sudo rm -rfv ~/.local/share/Trash/*
+		sudo rm -rfv /root/.local/share/Trash/*
+	end
+
+	# Clear temporary files
+	function clear-temp
+		echo 'Clearing temporary files...'
+		sudo rm -rfv /tmp/*
+		sudo rm -rfv /var/tmp/*
+	end
+
+	# Clear crash reports
+	function clear-crash-reports
+		echo 'Clearing crash reports...'
+		sudo rm -rfv /var/crash/*
+		sudo rm -rfv /var/lib/systemd/coredump/
+	end
+
+	# Clear system logs
+	function clear-syslogs
+		echo 'Clearing system logs...'
+		if ! command -v 'journalctl' &> /dev/null
+			echo 'Skipping because journalctl was not found'
+		else
+			sudo journalctl --vacuum-time=1s
+		end
+
+		sudo rm -rfv /run/log/journal/*
+		sudo rm -rfv /var/log/journal/*
+	end
+
+	# Combined cleanup
+	function cleanup
+		empty-trash
+		clear-temp
+		clear-crash-reports
+		clear-syslogs
+	end
+
+	function lsupd
+		echo "* Official updates *"
+		checkupdates
+		echo -e "\n* AUR Updates *"
+		yay -Qua
+	end
+
+	# Create a backup of the given file
+	function backup-file --argument filename
+		sudo cp $filename $filename.bak
+	end
+
+	# Copy file
+	function copy
+		set count (count $argv | tr -d \n)
+		if test "$count" = 2; and test -d "$argv[1]"
+			set from (echo $argv[1] | trim-right /)
+			set to (echo $argv[2])
+			command cp -r $from $to
+		else
+			command cp $argv
+		end
+	end
+
+	function ffmpeg-convert
+		for f in *.$argv[1];
+			set fname (string split -r -m1 . $f)[1]
+			ffmpeg -i "$f" "$fname.$argv[2]"
+		end
+	end
+
 	# Fish greeting message
 	function fish_greeting
 	end
@@ -179,3 +178,4 @@ if status is-interactive
 	zoxide init --cmd cd fish | source
 
 end
+# End of interactive mode
