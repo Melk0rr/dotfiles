@@ -1,0 +1,4 @@
+layout tall:bias=60
+launch mocp
+launch clyrics -m -s 1
+launch cava
