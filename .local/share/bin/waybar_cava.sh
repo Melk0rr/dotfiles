@@ -95,7 +95,7 @@ bars = ${bar_width}
 sleep_timer = 1
 
 [input]
-method = pulse
+method = pipewire
 source = auto
 [output]
 method = raw

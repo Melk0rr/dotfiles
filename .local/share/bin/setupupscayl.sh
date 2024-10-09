@@ -21,6 +21,11 @@ for file in "${wallDir}"/* ; do
     fwidth=$(identify -format "%w" "${file}")
     fheight=$(identify -format "%h" "${file}")
     upscFact=$((($minHeight + $fheight - 1) / $fheight))
+    upscFactW=$((($minWidth + $fwidth - 1) / $fwidth))
+    
+    if [[ $upscFactW -gt $upscFact ]] ; then
+      upscFact="${upscFactW}"
+    fi  
     
     if [[ ! -d "${wallDir}/x${upscFact}" ]] ; then
       mkdir -p "${wallDir}/x${upscFact}"

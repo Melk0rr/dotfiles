@@ -111,4 +111,4 @@ fi
 
 #// apply wallpaper
 echo ":: applying wall :: \"$(readlink -f "${wallSet}")\""
-swww img "$(readlink "${wallSet}")" --transition-bezier .43,1.19,1,.4 --transition-type "${xtrans}" --transition-duration "${wallTransDuration}" --transition-fps "${wallFramerate}" --invert-y --transition-pos "$(hyprctl cursorpos)" &
+swww img "$(readlink "${wallSet}")" --resize=crop --transition-bezier .43,1.19,1,.4 --transition-type "${xtrans}" --transition-duration "${wallTransDuration}" --transition-fps "${wallFramerate}" --invert-y --transition-pos "$(hyprctl cursorpos)" &
