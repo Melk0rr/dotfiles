@@ -60,7 +60,6 @@ OpenRGB_Wallbash () {
     if [[ $line =~ ^# ]] ; then
       read line1
 
-      devIndex=$( echo $line | cut -s -f 1 -d : )
       devName=$( echo $line | cut -s -f 2 -d : )
       devStr=$( IFS=$'\n'; echo "${deviceList[*]}" )
       mapfile -t devSearch < <( echo "${devStr}" | grep "${devName}" )
