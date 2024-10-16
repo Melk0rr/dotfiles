@@ -3,10 +3,11 @@
 scrDir="$(dirname "$(realpath "$0")")"
 source "${scrDir}/globalcontrol.sh"
 
+# devices=($( openrgb -l | grep '^[0-9]: ' ))
+mapfile -t devices < <(openrgb -l | grep '^[0-9]: ')
+
 mode="wallbash"
 openrgbConf="${hydeThemeDir}/openrgb.conf"
-
-export PYTHONPATH=$PYTHONPATH:${scrDir}
 
 currWpp=$(readlink "${cacheDir}/wall.set")
 wppName=$(basename "${currWpp}" | awk -F '.' '{print $1}')
@@ -52,11 +53,24 @@ OpenRGB_Wallbash () {
     openrgbCmd+=" --startminimized --server"
   fi
 
+  deviceList=("${devices[@]}")
+
   i=0
   while read -r line ; do
     if [[ $line =~ ^# ]] ; then
       read line1
-      openrgbCmd+=" -d ${line:2:1} -c ${line1} -m Direct"
+
+      devIndex=$( echo $line | cut -s -f 1 -d : )
+      devName=$( echo $line | cut -s -f 2 -d : )
+      devStr=$( IFS=$'\n'; echo "${deviceList[*]}" )
+      mapfile -t devSearch < <( echo "${devStr}" | grep "${devName}" )
+      
+      device=${devSearch[0]}
+      deviceList=( "${deviceList[@]/$device}" )
+
+      devId=$( echo $device | cut -s -f 1 -d : )
+
+      openrgbCmd+=" -d ${devId} -c ${line1} -m Direct"
     fi
     i=$((i+1));
   done < "$col"
