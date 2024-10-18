@@ -5,9 +5,14 @@ scrDir="$(dirname "$(realpath "$0")")"
 source "${scrDir}/globalcontrol.sh"
 
 wallSet="${hydeThemeDir}/wall.set"
-mozProfile=$(cat $HOME/.mozilla/firefox/profiles.ini | grep "Default=" | head -n 1 | awk -F '=' '{print $2}')
+mozProfile=$(grep "Default=" ~/.mozilla/firefox/profiles.ini | head -n 1 | cut -s -f 2 -d =)
+floorpProfile=$(grep "Default=" ~/.floorp/profiles.ini | tail -n 1 | cut -s -f 2 -d '=')
+
 mozDir="$HOME/.mozilla/firefox/${mozProfile}"
+floorpDir="$HOME/.floorp/${floorpProfile}"
 
 mkdir -p $mozDir/chrome
+mkdir -p $floorpDir/chrome
 
 ln -sf "$(readlink "${wallSet}")" $mozDir/chrome/wall.set
+ln -sf "$(readlink "${wallSet}")" $floorpDir/chrome/wall.set
