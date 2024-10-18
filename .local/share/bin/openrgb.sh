@@ -65,11 +65,13 @@ OpenRGB_Wallbash () {
       mapfile -t devSearch < <( echo "${devStr}" | grep "${devName}" )
       
       device=${devSearch[0]}
-      deviceList=( "${deviceList[@]/$device}" )
+      
+      if [[ ! -z "$device" ]] ; then
+        deviceList=( "${deviceList[@]/$device}" )
 
-      devId=$( echo $device | cut -s -f 1 -d : )
-
-      openrgbCmd+=" -d ${devId} -c ${line1} -m Direct"
+        devId=$( echo $device | cut -s -f 1 -d : )
+        openrgbCmd+=" -d ${devId} -c ${line1} -m Direct"
+      fi
     fi
     i=$((i+1));
   done < "$col"
