@@ -145,6 +145,11 @@ if status is-interactive
 	abbr update-mirrors 'sudo reflector --verbose --score 100 --latest 20 --fastest 5 --sort rate --save /etc/pacman.d/mirrorlist'
 	abbr fix-key 'sudo rm /var/lib/pacman/sync/* && sudo rm -rf /etc/pacman.d/gnupg/* && sudo pacman-key --init && sudo pacman-key --populate && sudo pacman -Sy --noconfirm archlinux-keyring && sudo pacman --noconfirm -Su'
 	abbr chroot-build 'mkdir -p ~/Documents/chroot/; set CHROOT $HOME/Documents/chroot; mkarchroot $CHROOT/root base-devel; makechrootpkg -c -r $CHROOT'
+	abbr lsblk 'lsblk -o +uuid,name'
+	
+	#DNS
+	abbr dnstls-opt 'sudo sed -i "/^DNSOverTLS=/c\DNSOverTLS=opportunistic" /etc/systemd/resolved.conf; sudo systemctl restart systemd-resolved'
+	abbr dnstls-yes 'sudo sed -i "/^DNSOverTLS=/c\DNSOverTLS=yes" /etc/systemd/resolved.conf; sudo systemctl restart systemd-resolved'
 
 	# Rclone
 	abbr rcc 'rclone copy'
