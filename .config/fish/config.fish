@@ -101,13 +101,6 @@ if status is-interactive
 	# Fish greeting message
 	function fish_greeting
 	end
-	
-	# Command not found hint (Arch)
-	function fish_command_not_found
-		if [ "$(uname)" = 'Linux' ]
-			/usr/bin/pkgfile $argv[1]
-		end
-	end
 
 	############# Aliases & Abbreviations ############# 
 	alias grep='grep --color'
