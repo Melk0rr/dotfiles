@@ -468,6 +468,7 @@ pre.CodeMirror-line span.cm-comment {
 pre.CodeMirror-line span.CodeMirror-selectedtext {
 	/* background: var(--ctp-mocha-surface2) !important; */
 	background: #6B6B6B !important;
+  border-radius: 10px !important;
 }
 
 div[class^="cm-jn-code-block-background "]::selection {

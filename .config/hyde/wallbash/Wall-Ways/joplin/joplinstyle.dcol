@@ -85,11 +85,13 @@ hr {
 *********************************************************************************/
 
 h1 {
+  color: var(--ctp-mocha-lavender) !important;
   border-bottom: 1px solid var(--ctp-mocha-base) !important;
   font-weight: var(--bolder) !important;
 }
 
 h2, h3, h4, h5, h6 {
+  color: var(--ctp-mocha-lavender) !important;
   border-bottom: 0 !important;
   font-weight: var(--regular) !important;
 }
@@ -118,6 +120,7 @@ a:hover {
 
 pre, .hljs {
   background-color: var(--ctp-mocha-mantle) !important;
+  border-radius: 10px !important;
   font-family: var(--font-mono) !important;
   padding: 10px !important;
   color: var(--ctp-mocha-text) !important;
