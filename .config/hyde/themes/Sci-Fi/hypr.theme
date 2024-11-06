@@ -22,7 +22,6 @@ group {
 
 decoration {
     rounding = 8
-    drop_shadow = true
 
     blur {
         enabled = yes
