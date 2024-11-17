@@ -74,9 +74,9 @@
         "media",
         "network",
         "bluetooth",
-        "updates",
         "battery",
         "systray",
+        "updates",
         "notifications"
       ]
     },
