@@ -43,3 +43,6 @@ decoration {
 }
 
 layerrule = unset,waybar
+layerrule = unset,bar-0
+layerrule = unset,bar-1
+layerrule = unset,bar-2
