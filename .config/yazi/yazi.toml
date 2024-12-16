@@ -1,0 +1,25 @@
+[manager]
+linemode = "size"
+sort_by = "modified"
+sort_reverse = true
+# mouse = [ "click", "scroll", "drag" ]
+
+[preview]
+cache_dir = "~/.cache/yazi"
+
+[opener]
+edit = [
+    { run = 'VIMINIT="" ${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+    { run = 'codium %*',    orphan = true, desc = "codium",           for = "windows" },
+    { run = 'codium -w %*', block = true,  desc = "codium (block)",   for = "windows" },
+]
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"
