@@ -1,3 +1,7 @@
+# Applications
+set -gx EDITOR 'nvim'
+set -gx TERMINAL 'kitty'
+
 # Commands to run in interactive sessions can go here
 if status is-interactive
 	# Vim keybindings
