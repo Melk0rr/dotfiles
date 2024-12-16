@@ -1,0 +1,11 @@
+[Colors:View]
+BackgroundNormal=#192A53
+
+[General]
+TerminalApplication=kitty
+
+[Icons]
+Theme=cyberpunk-technotronic-icon-theme
+
+[UiSettings]
+ColorScheme=*
