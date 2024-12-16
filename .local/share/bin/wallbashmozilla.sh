@@ -20,3 +20,4 @@ mkdir -p $zenDir/chrome
 ln -sf "$(readlink "${wallSet}")" $mozDir/chrome/wall.set
 ln -sf "$(readlink "${wallSet}")" $floorpDir/chrome/wall.set
 ln -sf "$(readlink "${wallSet}")" $zenDir/chrome/wall.set
+magick "$(readlink "${wallSet}")" $HOME/.config/BraveSoftware/Brave-Browser/wall.jpg
