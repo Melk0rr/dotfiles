@@ -116,13 +116,12 @@ $HOME/.config/oh-my-posh/omp.json
             "foreground_templates": [
               "{{ if gt .Code 0 }}#ff0000{{ end }}"
             ],
-            "template": "❯ ",
+            "template": "\n❯ ",
             "properties": {
               "always_enabled": true
             }
           }
-        ],
-        "newline": true
+        ]
       }
     ]
   }

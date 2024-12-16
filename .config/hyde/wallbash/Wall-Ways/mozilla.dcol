@@ -1,1 +1,6 @@
 |${scrDir}/wallbashmozilla.sh
+@charset "UTF-8";
+
+:root {
+  --zen-primary-color: #<wallbash_1xa5> !important;
+}
