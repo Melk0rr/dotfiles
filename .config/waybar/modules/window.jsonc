@@ -1,17 +1,20 @@
     "hyprland/window": {
-        "format": "  {}",
+        "format": "{class} {title}",
         "rotate": ${r_deg},
         "separate-outputs": true,
         "rewrite": {
             "${USER}@${set_sysname}:(.*)": "$1 ",
             "(.*) — Mozilla Firefox": "$1 󰈹",
             "(.*)Mozilla Firefox": "Firefox 󰈹",
-            "(.*) - Visual Studio Code": "$1 󰨞",
-            "(.*)Visual Studio Code": "Code 󰨞",
-            "(.*) — Dolphin": "$1 󰉋",
-            "(.*)Spotify": "Spotify 󰓇",
-            "(.*)Steam": "Steam 󰓓"
+            "zen-beta (.*) — Zen Browser": "󰈹 $1",
+            "FreeTube (.*) - FreeTube": " $1",
+            "codium (.*)": "󰨞 $1",
+            "org.kde.dolphin (.*) — Dolphin": "󱢴 $1",
+            "Spotify (.*)": "󰓇 $1",
+            "steam (.*)": "󰓓 $1",
+            "kitty (.*)": "󰄛 $1",
+            "imv (.*)": " $1"
         },
-        "max-length": 1000
+        "max-length": 100
     },
 

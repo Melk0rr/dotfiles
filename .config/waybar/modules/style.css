@@ -17,7 +17,7 @@ tooltip {
     background: @main-bg;
     color: @main-fg;
     border-radius: ${t_radius}px;
-    border-width: 0px;
+    border: 2px solid @main-fg;
 }
 
 #workspaces button {
@@ -148,4 +148,14 @@ ${modules_ls}
     border-radius: ${x1lc_radius}px ${x2lc_radius}px ${x3lc_radius}px ${x4lc_radius}px;
     margin-${x3}: ${e_margin}px;
     padding-${x3}: ${e_paddin}px;
+}
+
+
+#custom-launcher {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+#custom-updates {
+    color: @wb-act-fg;
 }
