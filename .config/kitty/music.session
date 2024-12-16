@@ -1,4 +1,4 @@
-layout tall:bias=60
+title music session
+layout fat:bias=60;mirrored=true
 launch cmus
-launch clyrics -c -s 1
 launch cava
