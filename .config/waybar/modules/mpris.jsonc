@@ -11,6 +11,9 @@
         },
         // "ignored-players": ["firefox"]
         "max-length": 50,
+        "dynamic-length": 50,
+        "dynamic-order": ["artist", "title", "album", "length", "position"],
+        "dynamic-importance-order": ["artist", "title", "album", "length", "position"],
         "interval": 1
     },
 

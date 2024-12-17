@@ -2,8 +2,8 @@
         "format": "󰸗 {:L%a%d %b %H:%M:%S}",
         "interval": 1,
         "rotate": ${r_deg},
-        "format-alt": "{:%R}",
-        "tooltip-format": "<big>{:%H:%M:%S}</big>\n<tt>{calendar}</tt>",
+        "format-alt": "󰥔 {:%R}",
+        "tooltip-format": "<big><span font='25'>{:%H:%M:%S}</span></big>\n<tt><span font='15'>{calendar}</span></tt>",
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,
@@ -13,9 +13,9 @@
             "format": {
                 "months"  : "<span><b>{}</b></span>",
                 "days"    : "<span>{}</span>",
-                "weeks"   : "<span color='@wb-act-fg'><b>W{}</b></span>",
+                "weeks"   : "<span color='cyan'><b>W{}</b></span>",
                 "weekdays": "<span><b>{}</b></span>",
-                "today"   : "<span><b><u>{}</u></b></span>"
+                "today"   : "<span color='magenta'><b><u>{}</u></b></span>"
             }
         },
         "actions": {

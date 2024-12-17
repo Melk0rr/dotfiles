@@ -16,12 +16,12 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", "", " "]
         }
     },
 
     "pulseaudio#microphone": {
-        "format": "{format_source}{volume}",
+        "format": "{format_source} {volume}",
         "rotate": ${r_deg},
         "format-source": "",
         "format-source-muted": "",
