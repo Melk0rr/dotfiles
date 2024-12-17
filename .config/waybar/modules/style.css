@@ -150,7 +150,6 @@ ${modules_ls}
     padding-${x3}: ${e_paddin}px;
 }
 
-
 #custom-launcher {
     padding-left: 0px;
     margin-left: 0px;
@@ -158,4 +157,38 @@ ${modules_ls}
 
 #custom-updates {
     color: @wb-act-fg;
+}
+
+#mediagroup, #soundgroup, #cpugroup {
+    border-radius: ${x2rb_radius}px;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+#mediagroup *, #soundgroup *, #cpugroup * {
+    background: transparent;
+}
+
+#mediagroup {
+    background: @wb-act-bg;
+}
+
+#mediagroup * {
+    color: @wb-act-fg;
+}
+
+#soundgroup {
+    background: @third-bg;
+}
+
+#soundgroup * {
+    color: @wb-act-fg;
+}
+
+#cpugroup {
+    background: @fourth-bg;
+}
+
+#cpugroup {
+    color: @main-fg;
 }

@@ -1,0 +1,7 @@
+	"group/mediagroup": {
+		"orientation": "horizontal",
+		"modules": [
+			"mpris",
+			"cava"
+		]
+	},

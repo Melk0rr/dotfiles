@@ -3,7 +3,7 @@
         "interval": 1,
         "rotate": ${r_deg},
         "format-alt": "{:%R}",
-        "tooltip-format": "<tt>{calendar}</tt>",
+        "tooltip-format": "<big>{:%H:%M:%S}</big>\n<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,
@@ -13,7 +13,7 @@
             "format": {
                 "months"  : "<span><b>{}</b></span>",
                 "days"    : "<span>{}</span>",
-                "weeks"   : "<span><b>W{}</b></span>",
+                "weeks"   : "<span color='@wb-act-fg'><b>W{}</b></span>",
                 "weekdays": "<span><b>{}</b></span>",
                 "today"   : "<span><b><u>{}</u></b></span>"
             }

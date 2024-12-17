@@ -100,6 +100,7 @@ tooltip {
 #cava,
 #custom-cliphist,
 #clock,
+#cpugroup,
 #custom-cpuinfo,
 #cpu,
 #custom-gpuinfo,
@@ -107,12 +108,14 @@ tooltip {
 #custom-keybindhint,
 #language,
 #custom-launcher,
+#mediagroup,
 #memory,
 #mpris,
 #network,
 #custom-notifications,
 #custom-power,
 #pulseaudio,
+#soundgroup,
 #custom-spotify,
 #taskbar,
 #custom-theme,
@@ -178,7 +181,6 @@ tooltip {
     padding-left: 2px;
 }
 
-
 #custom-launcher {
     padding-left: 0px;
     margin-left: 0px;
@@ -186,4 +188,38 @@ tooltip {
 
 #custom-updates {
     color: @wb-act-fg;
+}
+
+#mediagroup, #soundgroup, #cpugroup {
+    border-radius: 30px;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+#mediagroup *, #soundgroup *, #cpugroup * {
+    background: transparent;
+}
+
+#mediagroup {
+    background: @wb-act-bg;
+}
+
+#mediagroup * {
+    color: @wb-act-fg;
+}
+
+#soundgroup {
+    background: @third-bg;
+}
+
+#soundgroup * {
+    color: @wb-act-fg;
+}
+
+#cpugroup {
+    background: @fourth-bg;
+}
+
+#cpugroup {
+    color: @main-fg;
 }

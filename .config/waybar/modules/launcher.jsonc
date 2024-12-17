@@ -1,4 +1,6 @@
   "custom/launcher": {
     "format": "",
     "rotate": ${r_deg},
+    "on-click": "pkill -x rofi || rofilaunch.sh d",
+    "tooltip": false
   },
