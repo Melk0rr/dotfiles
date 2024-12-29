@@ -1,0 +1,29 @@
+:root {
+  --toolbar-color: var(--toolbar-non-lwt-textcolor) !important;
+  --toolbar-bgcolor: var(--toolbar-non-lwt-bgcolor) !important;
+  --arrowpanel-background: Field !important;
+  --zen-primary-color: var(--toolbar-non-lwt-bgcolor) !important;
+}
+
+/* TOOLBAR */
+.browser-toolbar {
+  color: var(--toolbar-color) !important;
+  background-color: var(--toolbar-bgcolor) !important;
+}
+
+.toolbarbutton-1 {
+  fill: currentColor !important;
+}
+
+#urlbar-background {
+  background-color: Field !important;
+}
+
+/* SIDEBAR */
+#navigator-toolbox {
+  background-color: ActiveCaption !important;
+}
+
+#TabsToolbar {
+  background-color: transparent !important;
+}

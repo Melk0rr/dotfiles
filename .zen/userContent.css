@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* Please write your custom CSS under this line*/
+
+/* :root {
+  --zen-primary-color: Field !important;
+} */
+
+@-moz-document url(about:blank),
+url(about:newtab),
+url(about:home) {
+  :root {
+    --newtab-wallpaper-dark: url("wall.set") !important;
+  }
+
+  body {
+    background: url("wall.set") center/cover no-repeat fixed !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  
+  #background {
+    filter: blur(10px);
+  }
+}
