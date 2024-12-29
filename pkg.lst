@@ -5,15 +5,16 @@ blueman
 brightnessctl
 downgrade
 gufw
+gst-plugin-pipewire
 i2c-tools
 networkmanager
 network-manager-applet
+openrgb-git
 pipewire
 pipewire-alsa
 pipewire-audio
 pipewire-jack
 pipewire-pulse
-gst-plugin-pipewire
 pavucontrol
 pamixer
 wireplumber
@@ -96,6 +97,7 @@ cmus
 easyeffects
 easytags
 imv
+inkscape
 mpv
 freetube-bin
 lollypop
@@ -104,6 +106,7 @@ spicetify-cli
 spotify
 spotdl
 spotx-git
+upscayl-bin
 yt-dlp
 
 # --------------------------------------------------- // Gaming
@@ -126,12 +129,17 @@ vim
 # --------------------------------------------------- // Applications
 apparmor
 baobab
+blanket
 coolercontrol-bin
 coolercontrol-liqctld
 drawio-desktop
+gnome-disk-utility
 keepassxc
+libreoffice-fresh
 localsend-bin
 logseq-desktop-bin
+mission-center
+newsflash
 proton-mail
 proton-pass
 proton-vpn-gtk-app
@@ -144,6 +152,7 @@ ventoy
 veracrypt-git
 webcord-git
 zen-browser-bin
+zotero-bin
 
 # --------------------------------------------------- // Dolphin
 dolphin
