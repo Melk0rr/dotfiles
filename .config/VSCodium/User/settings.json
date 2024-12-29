@@ -24,6 +24,7 @@
   "editor.tabSize": 2,
   "dotnetAcquisitionExtension.enableTelemetry": false,
   "terminal.integrated.fontSize": 12,
-  "workbench.externalBrowser": "firefox",
-  "git.openRepositoryInParentFolders": "never"
+  "workbench.externalBrowser": "zen-browser",
+  "git.openRepositoryInParentFolders": "never",
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
